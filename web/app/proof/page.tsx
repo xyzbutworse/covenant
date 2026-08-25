@@ -1,5 +1,6 @@
 import { PageChrome } from '../../components/PageChrome';
 import { StatusPill } from '../../components/StatusPill';
+import { publicEvidence } from '../../lib/public-evidence';
 
 const sourceTx = process.env.NEXT_PUBLIC_SOURCE_TX_HASH || '';
 const evidenceTx = process.env.NEXT_PUBLIC_EVIDENCE_TX_HASH || '';
@@ -9,6 +10,7 @@ const sourceExplorer = process.env.NEXT_PUBLIC_SOURCE_EXPLORER || 'https://sepol
 const creditExplorer = process.env.NEXT_PUBLIC_CREDITCOIN_EXPLORER || 'https://creditcoin-testnet.blockscout.com';
 const proverUrl = process.env.NEXT_PUBLIC_PROOF_BUILDER_URL || 'https://prover.cc3-testnet.creditcoin.network';
 const usdc = process.env.NEXT_PUBLIC_SOURCE_USDC_ADDRESS || '0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238';
+const drawTx = process.env.NEXT_PUBLIC_TRANCHE_DRAW_TX_HASH || '';
 
 function RefLink({ label, href, missing }: { label: string; href: string | null; missing?: string }) {
   if (!href) return <span className="proofRef proofRefMissing">{missing ?? `${label}: awaiting live evidence`}</span>;
@@ -53,7 +55,7 @@ export default function ProofPage() {
       links: (
         <>
           <RefLink label="Proof builder service" href={proverUrl} />
-          <RefLink label="Worker: prove step" href="https://github.com/gluwa/attestcoin-protocol-examples" />
+          <RefLink label="Proof metadata" href={publicEvidence.proofMetadataUrl || null} />
         </>
       ),
     },
@@ -90,7 +92,12 @@ export default function ProofPage() {
       net: 'TRANCHE UNLOCKED',
       title: 'Next tranche becomes drawable.',
       body: 'availableToDraw() increases on-chain. Anyone can verify it moved as a direct consequence of the proof transaction above.',
-      links: <RefLink label="COVENANT facility" href={contract ? `${creditExplorer}/address/${contract}` : null} missing="Facility address: awaiting deployment" />,
+      links: (
+        <>
+          <RefLink label="Tranche draw transaction" href={txLink(creditExplorer, drawTx)} />
+          <RefLink label="COVENANT facility" href={contract ? `${creditExplorer}/address/${contract}` : null} missing="Facility address: awaiting deployment" />
+        </>
+      ),
     },
   ];
 

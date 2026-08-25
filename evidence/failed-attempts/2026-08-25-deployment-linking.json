@@ -1,0 +1,26 @@
+{
+  "status": "partial-failure",
+  "attemptedAt": "2026-08-25T02:08:00Z",
+  "network": {
+    "name": "Creditcoin CC3 Testnet",
+    "chainId": 102031,
+    "rpc": "https://rpc.cc3-testnet.creditcoin.network",
+    "explorer": "https://creditcoin-testnet.blockscout.com"
+  },
+  "deployer": "0x5ee198D6C1b8a3a1D5a7aBDcd8c3d906f907B2DB",
+  "decoder": {
+    "address": "0x33250106008ac99Fd169596D04b359ACf4cDc1C5",
+    "transactionHash": "0xf67197ec3affe08f660445195ea1984fb3fb869c623d0e745ec238528d240182",
+    "blockNumber": 5369051,
+    "receiptStatus": 1,
+    "explorerUrl": "https://creditcoin-testnet.blockscout.com/tx/0xf67197ec3affe08f660445195ea1984fb3fb869c623d0e745ec238528d240182"
+  },
+  "facility": {
+    "broadcast": false,
+    "error": "Dynamic linking not supported in create command because the filesystem source path did not match Foundry's remapped link identity"
+  },
+  "resolution": {
+    "recordedAt": "2026-08-25T02:13:09Z",
+    "change": "Use the @gluwa remapping identity for the pre-linked library specification, then rerun the full deployment from a fresh decoder deployment"
+  }
+}

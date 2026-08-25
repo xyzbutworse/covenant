@@ -1,20 +1,60 @@
 {
   "id": "L02-wrong-covenant-evidence",
   "kind": "live-chain",
-  "title": "Submit evidence intended for covenant A into covenant B",
-  "invariantDefended": "Per-covenant chain/window/policy binding",
-  "recordedAtUTC": "2026-08-25T00:10:27.453Z",
+  "title": "Evidence intended for covenant A submitted into covenant B",
+  "invariantDefended": "Per-covenant binding; identity already consumed globally",
+  "recordedAtUTC": "2026-08-25T02:36:16.124Z",
   "network": "Creditcoin CC3 Testnet (102031) / Ethereum Sepolia (11155111)",
-  "contract": null,
-  "facilityId": "0",
-  "covenantId": "0",
-  "inputTransaction": null,
-  "proofOrCallIdentifier": null,
-  "rejectionTxHash": null,
-  "revertedOnChain": null,
-  "revertReason": null,
-  "outcome": "skipped",
-  "stateBefore": null,
-  "stateAfter": null,
-  "notes": "Needs completed happy path (real Sepolia USDC payment, Attestcoin proof, consumed submission) plus funded attack wallets."
+  "contract": "0xEa07D0995993C86e32923c16e1eBA92c21a2Fbc9",
+  "facilityId": "2",
+  "covenantId": "2",
+  "inputTransaction": "0xc7a0099ddf65af11e91b687f4f3bebe4179c9d4982b6ded8a63c76e8b00f6d20",
+  "proofOrCallIdentifier": "0xff2ddf35f00584982446e441ebc3a1997f79dda15a4bde8b8230c6c782e40189",
+  "rejectionTxHash": "0xd4878002ab9ed5018cf1caf56aeda178d3457cfcc763794683d88814f3734ca6",
+  "revertedOnChain": true,
+  "revertReason": "SourceBlockOutsideWindow()",
+  "outcome": "rejected",
+  "stateBefore": {
+    "creditcoinHead": 5369149,
+    "facility": {
+      "creditLimitCTC": "10.0",
+      "unlockedCTC": "2.0",
+      "drawnCTC": "0.0",
+      "status": 1,
+      "activeCovenantId": "2"
+    },
+    "covenant": {
+      "verifiedAmountRaw": "0",
+      "requiredAmountRaw": "5000000",
+      "startSourceBlock": "11561115",
+      "endSourceBlock": "11561665",
+      "proofDeadlineCreditcoinBlock": "5370147",
+      "freezeFrontierMarginSourceBlocks": "50",
+      "status": 2
+    },
+    "availableToDrawCTC": "2.0",
+    "isFreezableNow": false
+  },
+  "stateAfter": {
+    "creditcoinHead": 5369150,
+    "facility": {
+      "creditLimitCTC": "10.0",
+      "unlockedCTC": "2.0",
+      "drawnCTC": "0.0",
+      "status": 1,
+      "activeCovenantId": "2"
+    },
+    "covenant": {
+      "verifiedAmountRaw": "0",
+      "requiredAmountRaw": "5000000",
+      "startSourceBlock": "11561115",
+      "endSourceBlock": "11561665",
+      "proofDeadlineCreditcoinBlock": "5370147",
+      "freezeFrontierMarginSourceBlocks": "50",
+      "status": 2
+    },
+    "availableToDrawCTC": "2.0",
+    "isFreezableNow": false
+  },
+  "notes": null
 }

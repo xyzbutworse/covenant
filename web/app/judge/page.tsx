@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { PageChrome } from '../../components/PageChrome';
 import { StatusPill } from '../../components/StatusPill';
 import { Brand } from '../../components/Brand';
+import { publicEvidence } from '../../lib/public-evidence';
 
 /**
  * JUDGE MODE — canonical demo scenario figures are the product's fixed narrative constants
@@ -23,7 +24,9 @@ export default function JudgePage() {
           <span className="eyebrow">THE WHOLE PROJECT IN ONE MINUTE</span>
           <h1>Read this once.<br />You understand COVENANT.</h1>
         </div>
-        <StatusPill tone="violet">60-SECOND BRIEF</StatusPill>
+        <StatusPill tone={publicEvidence.complete ? 'good' : 'warn'}>
+          {publicEvidence.complete ? 'REAL EVIDENCE LIVE' : 'EVIDENCE INCOMPLETE'}
+        </StatusPill>
       </div>
 
       <section className="judgeHero">
@@ -98,6 +101,35 @@ export default function JudgePage() {
         <Link href="/facility" className="primaryBtn">Open live facility</Link>
         <Link href="/proof" className="ghostBtn">Follow the proof chain</Link>
         <Link href="/docs" className="ghostBtn">Protocol notes</Link>
+      </section>
+
+      <section className="evidenceBand">
+        <div className="bandHead">
+          <div>
+            <span className="eyebrow">ONE CAUSAL STORY · SIX PUBLIC LINKS</span>
+            <h2>Payment to proof to capital movement.</h2>
+          </div>
+          <StatusPill tone={publicEvidence.complete ? 'good' : 'warn'}>
+            {publicEvidence.complete ? 'INDEPENDENTLY INSPECTABLE' : 'AWAITING LINKS'}
+          </StatusPill>
+        </div>
+        <ul className="mechanismList judgeNegList">
+          {publicEvidence.links.map((item, index) => (
+            <li key={item.label}>
+              <b>{String(index + 1).padStart(2, '0')}</b>
+              <span>
+                <b>{item.label}:</b> {item.detail}.{' '}
+                {item.href ? (
+                  <a href={item.href} target="_blank" rel="noreferrer" className="proofRef">
+                    Inspect evidence ↗
+                  </a>
+                ) : (
+                  <span className="proofRef proofRefMissing">Awaiting evidence</span>
+                )}
+              </span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="evidenceBand">

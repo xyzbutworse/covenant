@@ -26,6 +26,8 @@
     "check": "npm run typecheck && npm run lint && npm run contracts:test && npm run web:build",
     "worker:pay": "npm --workspace worker run pay",
     "worker:setup": "npm --workspace worker run setup",
+    "worker:draw-next": "npm --workspace worker run draw-next",
+    "worker:targeted-guards": "npm --workspace worker run targeted-guards",
     "preflight": "./scripts/preflight.sh",
     "worker:attacks": "npm --workspace worker run attacks",
     "export:local-adversarial": "node scripts/export-local-adversarial.cjs"

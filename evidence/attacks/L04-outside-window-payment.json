@@ -2,19 +2,39 @@
   "id": "L04-outside-window-payment",
   "kind": "live-chain",
   "title": "Source transaction outside eligible block window",
-  "invariantDefended": "Immutable source-window binding",
-  "recordedAtUTC": "2026-08-25T00:10:27.453Z",
+  "invariantDefended": "Window binding: only blocks within [start,end] can ever count",
+  "recordedAtUTC": "2026-08-25T02:57:04.568Z",
   "network": "Creditcoin CC3 Testnet (102031) / Ethereum Sepolia (11155111)",
-  "contract": null,
-  "facilityId": "0",
-  "covenantId": "0",
-  "inputTransaction": null,
-  "proofOrCallIdentifier": null,
-  "rejectionTxHash": null,
-  "revertedOnChain": null,
-  "revertReason": null,
-  "outcome": "skipped",
+  "contract": "0xEa07D0995993C86e32923c16e1eBA92c21a2Fbc9",
+  "facilityId": "4",
+  "covenantId": "4",
+  "inputTransaction": "0xcbb265c3e8e36a971282cf9df728f4a24df229107299d8a9be64fb012da92797",
+  "proofOrCallIdentifier": "0xca8c1bd1a90f506e1e857ee72317d6445079c3fa3a862af3a81b7dd819bdad80",
+  "rejectionTxHash": "0xfb1d11f01aea99f465e353be6c9f8ec77767be35ff57e3fa8bfc3e41a05fa4e8",
+  "revertedOnChain": true,
+  "revertReason": "SourceBlockOutsideWindow()",
+  "outcome": "rejected",
   "stateBefore": null,
-  "stateAfter": null,
-  "notes": "Needs completed happy path (real Sepolia USDC payment, Attestcoin proof, consumed submission) plus funded attack wallets."
+  "stateAfter": {
+    "creditcoinHead": 5369233,
+    "facility": {
+      "creditLimitCTC": "10.0",
+      "unlockedCTC": "2.0",
+      "drawnCTC": "0.0",
+      "status": 1,
+      "activeCovenantId": "4"
+    },
+    "covenant": {
+      "verifiedAmountRaw": "0",
+      "requiredAmountRaw": "5000000",
+      "startSourceBlock": "11561178",
+      "endSourceBlock": "11561208",
+      "proofDeadlineCreditcoinBlock": "5370193",
+      "freezeFrontierMarginSourceBlocks": "50",
+      "status": 2
+    },
+    "availableToDrawCTC": "2.0",
+    "isFreezableNow": false
+  },
+  "notes": null
 }

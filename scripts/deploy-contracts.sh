@@ -33,7 +33,9 @@ if [[ ! "$DECODER_ADDRESS" =~ ^0x[0-9a-fA-F]{40}$ ]]; then
 fi
 
 echo "[2/2] Deploying CovenantFacility linked to $DECODER_ADDRESS..."
-LIB_SPEC="$DECODER_SOURCE:EvmV1Decoder:$DECODER_ADDRESS"
+# Foundry resolves the library link reference through the remapping name, while
+# forge create needs the filesystem path above to deploy the library itself.
+LIB_SPEC="@gluwa/usc-contracts/contracts/decoding/EvmV1Decoder.sol:EvmV1Decoder:$DECODER_ADDRESS"
 FACILITY_OUTPUT="$(forge create \
   --broadcast \
   --rpc-url "$CREDITCOIN_RPC_URL" \

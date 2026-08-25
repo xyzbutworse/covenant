@@ -1,20 +1,29 @@
 {
   "id": "L09-early-freeze",
   "kind": "live-chain",
-  "title": "Early freeze before attestation/proof conditions permit",
-  "invariantDefended": "Freeze requires cure-deadline elapsed AND Attestcoin frontier >= end+margin",
-  "recordedAtUTC": "2026-08-25T00:10:27.450Z",
   "network": "Creditcoin CC3 Testnet (102031) / Ethereum Sepolia (11155111)",
-  "contract": null,
-  "facilityId": "0",
-  "covenantId": "0",
+  "contract": "0xEa07D0995993C86e32923c16e1eBA92c21a2Fbc9",
+  "facilityId": "8",
+  "covenantId": "8",
+  "setupTransactions": {
+    "facility": "0x3a52c9f159bb10958dcab8b510a5eeb88e3a5b0de4f5ac6c94822032d9054276",
+    "covenant": "0x0efc10b3a60371b5b7e559352124f5e905105d892627360ce2dfe6b9ca6bb76a",
+    "acceptance": "0x52684d32c12a15bfbbf62c448614ff32def5b6fdab2767079364e05a0c6d936d"
+  },
+  "stateAfter": {
+    "covenantStatus": 2,
+    "availableToDrawWei": "2000000000000000000"
+  },
+  "title": "Freeze before the Creditcoin proof deadline",
+  "invariantDefended": "A pending covenant cannot freeze before its committed CC3 proof deadline",
+  "recordedAtUTC": "2026-08-25T03:22:18.531Z",
   "inputTransaction": null,
-  "proofOrCallIdentifier": null,
-  "rejectionTxHash": null,
-  "revertedOnChain": null,
-  "revertReason": null,
-  "outcome": "skipped",
-  "stateBefore": null,
-  "stateAfter": null,
-  "notes": "Requires deployed contract + accepted covenant. No funded key in this environment yet."
+  "proofOrCallIdentifier": "freezeExpiredCovenant(8)",
+  "rejectionTxHash": "0x53921fc58930c5f98f0be276b5486e1fdd7fce6242b255a75e8000e7ee9aab58",
+  "transactionExplorer": "https://creditcoin-testnet.blockscout.com/tx/0x53921fc58930c5f98f0be276b5486e1fdd7fce6242b255a75e8000e7ee9aab58",
+  "creditcoinBlock": 5369333,
+  "revertedOnChain": true,
+  "revertReason": "ProofDeadlineNotReached()",
+  "outcome": "rejected",
+  "notes": "Dedicated pending covenant with a future proof deadline. State remained pending after rejection."
 }

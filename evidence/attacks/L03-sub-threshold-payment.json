@@ -1,20 +1,43 @@
 {
   "id": "L03-sub-threshold-payment",
   "kind": "live-chain",
-  "title": "Below-threshold payment leaves covenant unsatisfied",
-  "invariantDefended": "Accumulation gate: unlock only at full requirement",
-  "recordedAtUTC": "2026-08-25T00:10:27.453Z",
+  "title": "Below-threshold payment accepted as evidence; capital does NOT move",
+  "invariantDefended": "Unlock strictly gated on accumulated >= required",
+  "recordedAtUTC": "2026-08-25T02:46:50.499Z",
   "network": "Creditcoin CC3 Testnet (102031) / Ethereum Sepolia (11155111)",
-  "contract": null,
-  "facilityId": "0",
-  "covenantId": "0",
-  "inputTransaction": null,
-  "proofOrCallIdentifier": null,
+  "contract": "0xEa07D0995993C86e32923c16e1eBA92c21a2Fbc9",
+  "facilityId": "3",
+  "covenantId": "3",
+  "inputTransaction": "0xcd57c9010d88179b85b94177ab173f95eaec55117a556ffba043225216936f91",
+  "proofOrCallIdentifier": "0x740cf1264078ecf95dd7b81d6fd265e8ff4a19a5f3d2c44441df3b09de633a33",
   "rejectionTxHash": null,
+  "acceptanceTxHash": "0x191d7e237bf84494d90d91e2339f3eb3daaa087725ca5372f3e9b79a5e644f51",
+  "creditcoinBlock": 5369192,
+  "transactionExplorer": "https://creditcoin-testnet.blockscout.com/tx/0x191d7e237bf84494d90d91e2339f3eb3daaa087725ca5372f3e9b79a5e644f51",
   "revertedOnChain": null,
   "revertReason": null,
-  "outcome": "skipped",
+  "outcome": "accepted-as-partial",
   "stateBefore": null,
-  "stateAfter": null,
-  "notes": "Needs completed happy path (real Sepolia USDC payment, Attestcoin proof, consumed submission) plus funded attack wallets."
+  "stateAfter": {
+    "creditcoinHead": 5369192,
+    "facility": {
+      "creditLimitCTC": "10.0",
+      "unlockedCTC": "2.0",
+      "drawnCTC": "0.0",
+      "status": 1,
+      "activeCovenantId": "3"
+    },
+    "covenant": {
+      "verifiedAmountRaw": "5000000",
+      "requiredAmountRaw": "10000000",
+      "startSourceBlock": "11561119",
+      "endSourceBlock": "11561669",
+      "proofDeadlineCreditcoinBlock": "5370151",
+      "freezeFrontierMarginSourceBlocks": "50",
+      "status": 2
+    },
+    "availableToDrawCTC": "2.0",
+    "isFreezableNow": false
+  },
+  "notes": "EvidenceAccepted emitted; covenant remains Pending; unlocked/availableToDraw unchanged."
 }

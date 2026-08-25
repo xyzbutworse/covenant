@@ -2,19 +2,39 @@
   "id": "L12-lender-early-withdrawal",
   "kind": "live-chain",
   "title": "closeFacility while active and immature",
-  "invariantDefended": "Committed undrawn escrow untouchable before permitted closure",
-  "recordedAtUTC": "2026-08-25T00:10:27.452Z",
+  "invariantDefended": "Undrawn committed escrow untouchable before permitted closure",
+  "recordedAtUTC": "2026-08-25T02:35:04.321Z",
   "network": "Creditcoin CC3 Testnet (102031) / Ethereum Sepolia (11155111)",
-  "contract": null,
-  "facilityId": "0",
-  "covenantId": "0",
+  "contract": "0xEa07D0995993C86e32923c16e1eBA92c21a2Fbc9",
+  "facilityId": "1",
+  "covenantId": "1",
   "inputTransaction": null,
   "proofOrCallIdentifier": null,
-  "rejectionTxHash": null,
-  "revertedOnChain": null,
-  "revertReason": null,
-  "outcome": "skipped",
+  "rejectionTxHash": "0x3957eee2433c81751a077e3e5eafd5d31b635304ba291dece3fd4e88f12d1d3c",
+  "revertedOnChain": true,
+  "revertReason": "FacilityNotClosable()",
+  "outcome": "rejected",
   "stateBefore": null,
-  "stateAfter": null,
-  "notes": "Requires deployed contract + accepted covenant. No funded key in this environment yet."
+  "stateAfter": {
+    "creditcoinHead": 5369145,
+    "facility": {
+      "creditLimitCTC": "10.0",
+      "unlockedCTC": "4.0",
+      "drawnCTC": "4.0",
+      "status": 1,
+      "activeCovenantId": "0"
+    },
+    "covenant": {
+      "verifiedAmountRaw": "5000000",
+      "requiredAmountRaw": "5000000",
+      "startSourceBlock": "11561093",
+      "endSourceBlock": "11561193",
+      "proofDeadlineCreditcoinBlock": "5369388",
+      "freezeFrontierMarginSourceBlocks": "50",
+      "status": 3
+    },
+    "availableToDrawCTC": "0.0",
+    "isFreezableNow": false
+  },
+  "notes": null
 }

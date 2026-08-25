@@ -12,6 +12,8 @@
     "typecheck": "tsc --noEmit",
     "pay": "tsx src/source-pay.ts",
     "setup": "tsx src/setup-demo.ts",
+    "draw-next": "tsx src/draw-next.ts",
+    "targeted-guards": "tsx src/targeted-guards.ts",
     "attacks": "tsx src/attacks.ts"
   },
   "dependencies": {

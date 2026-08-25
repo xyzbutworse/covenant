@@ -1,18 +1,52 @@
 {
-  "status": "not-deployed-yet",
+  "status": "deployed-and-source-verified",
+  "repository": "https://github.com/xyzbutworse/covenant",
   "creditcoin": {
-    "network": null,
-    "chainId": null,
-    "rpc": null,
-    "explorer": null,
-    "covenantFacility": null,
-    "deploymentTx": null,
-    "sourceVerified": false
+    "network": "Creditcoin CC3 Testnet",
+    "chainId": 102031,
+    "rpc": "https://rpc.cc3-testnet.creditcoin.network",
+    "explorer": "https://creditcoin-testnet.blockscout.com",
+    "deployer": "0x5ee198D6C1b8a3a1D5a7aBDcd8c3d906f907B2DB",
+    "covenantFacility": "0xEa07D0995993C86e32923c16e1eBA92c21a2Fbc9",
+    "verifierPrecompile": "0x0000000000000000000000000000000000000FD2",
+    "chainInfoPrecompile": "0x0000000000000000000000000000000000000FD3"
+  },
+  "contracts": {
+    "evmV1Decoder": {
+      "address": "0x5580BAceCD2e81dC75bD0aE30A6D21e3170a12b7",
+      "deploymentTx": "0xe277549a9d6e60d6654c21464e24f61553ba3a4eebc8a8efe0a91d7dc543282e",
+      "blockHeight": 5369062,
+      "blockTimestamp": "2026-08-25T02:14:00Z",
+      "receiptStatus": 1,
+      "runtimeCodeBytes": 10211,
+      "runtimeCodeHash": "0x20dcd0ab7a2dbbd17a9758367041e60c9a14b4580773d68c612424feeb2de154",
+      "sourceVerified": true,
+      "transactionExplorer": "https://creditcoin-testnet.blockscout.com/tx/0xe277549a9d6e60d6654c21464e24f61553ba3a4eebc8a8efe0a91d7dc543282e",
+      "contractExplorer": "https://creditcoin-testnet.blockscout.com/address/0x5580BAceCD2e81dC75bD0aE30A6D21e3170a12b7"
+    },
+    "covenantFacility": {
+      "address": "0xEa07D0995993C86e32923c16e1eBA92c21a2Fbc9",
+      "linkedDecoder": "0x5580BAceCD2e81dC75bD0aE30A6D21e3170a12b7",
+      "deploymentTx": "0xd2449c03c14656cd0cf4f7804712a87c3fee35045eb7de90c57e3912b1bf2309",
+      "blockHeight": 5369063,
+      "blockTimestamp": "2026-08-25T02:14:15Z",
+      "receiptStatus": 1,
+      "runtimeCodeBytes": 10079,
+      "runtimeCodeHash": "0xde0544c6d88832663c10318ed024e1622b77f2b63479d6d92caf0070c1ab287c",
+      "sourceVerified": true,
+      "transactionExplorer": "https://creditcoin-testnet.blockscout.com/tx/0xd2449c03c14656cd0cf4f7804712a87c3fee35045eb7de90c57e3912b1bf2309",
+      "contractExplorer": "https://creditcoin-testnet.blockscout.com/address/0xEa07D0995993C86e32923c16e1eBA92c21a2Fbc9"
+    }
   },
   "source": {
     "network": "Ethereum Sepolia",
     "chainId": 11155111,
-    "chainKey": null,
+    "chainKey": 1,
+    "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
+    "explorer": "https://sepolia.etherscan.io",
     "testUsdc": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238"
-  }
+  },
+  "failedAttempts": [
+    "evidence/failed-attempts/2026-08-25-deployment-linking.json"
+  ]
 }

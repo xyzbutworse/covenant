@@ -2,10 +2,10 @@
   "id": "L07-wrong-token-emitter",
   "kind": "live-chain",
   "title": "Evidence from wrong token emitter",
-  "invariantDefended": "Exact approved emitter binding",
-  "recordedAtUTC": "2026-08-25T00:10:27.453Z",
+  "invariantDefended": "Emitter must equal approved token contract",
+  "recordedAtUTC": "2026-08-25T03:17:50.169Z",
   "network": "Creditcoin CC3 Testnet (102031) / Ethereum Sepolia (11155111)",
-  "contract": null,
+  "contract": "0xEa07D0995993C86e32923c16e1eBA92c21a2Fbc9",
   "facilityId": "0",
   "covenantId": "0",
   "inputTransaction": null,
@@ -16,5 +16,5 @@
   "outcome": "skipped",
   "stateBefore": null,
   "stateAfter": null,
-  "notes": "Needs completed happy path (real Sepolia USDC payment, Attestcoin proof, consumed submission) plus funded attack wallets."
+  "notes": "Set SOURCE_WRONG_TOKEN_ADDRESS (any other Sepolia ERC-20 with balance) to execute."
 }

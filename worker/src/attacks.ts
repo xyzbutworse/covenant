@@ -11,6 +11,7 @@ import {
   keccak256,
   solidityPacked,
   toBeArray,
+  toBeHex,
   zeroPadValue,
 } from 'ethers';
 import { blockProver } from '@gluwa/usc-sdk';
@@ -67,7 +68,8 @@ let _provider: JsonRpcProvider | null = null;
 let _sourceProvider: JsonRpcProvider | null = null;
 let _covenant: Contract | null = null;
 let _covenantAsSubmitter: Contract | null = null;
-let _borrowerSigner: Wallet | null = null;
+let _borrowerSourceSigner: Wallet | null = null;
+let _borrowerCreditSigner: Wallet | null = null;
 
 function configured(): boolean {
   return Boolean(
@@ -101,7 +103,10 @@ function covenantAsSubmitter(): Contract {
   _covenantAsSubmitter ??= new Contract(
     process.env.COVENANT_CONTRACT_ADDRESS!.trim(),
     covenantAbi,
-    new Wallet((process.env.SUBMITTER_PRIVATE_KEY ?? process.env.CREDITCOIN_WALLET_PRIVATE_KEY)!.trim(), provider()),
+    new Wallet(
+      process.env.SUBMITTER_PRIVATE_KEY?.trim() || process.env.CREDITCOIN_WALLET_PRIVATE_KEY!.trim(),
+      provider(),
+    ),
   );
   return _covenantAsSubmitter;
 }
@@ -112,14 +117,19 @@ function lenderWallet(): Wallet {
 
 function submitterWallet(): Wallet {
   return new Wallet(
-    (process.env.SUBMITTER_PRIVATE_KEY ?? process.env.CREDITCOIN_WALLET_PRIVATE_KEY)!.trim(),
+    process.env.SUBMITTER_PRIVATE_KEY?.trim() || process.env.CREDITCOIN_WALLET_PRIVATE_KEY!.trim(),
     provider(),
   );
 }
 
-function borrowerSigner(): Wallet {
-  _borrowerSigner ??= new Wallet(cfg.sourcePrivateKey(), sourceProvider());
-  return _borrowerSigner;
+function borrowerSourceSigner(): Wallet {
+  _borrowerSourceSigner ??= new Wallet(cfg.sourcePrivateKey(), sourceProvider());
+  return _borrowerSourceSigner;
+}
+
+function borrowerCreditSigner(): Wallet {
+  _borrowerCreditSigner ??= new Wallet(cfg.sourcePrivateKey(), provider());
+  return _borrowerCreditSigner;
 }
 
 const ATTACKS_DIR = fromRepoRoot('evidence/attacks');
@@ -183,9 +193,9 @@ async function expectedQueryId(proof: {
       ['bytes32', 'bytes8', 'bytes24', 'bytes8'],
       [
         zeroPadValue(toBeArray(BigInt(proof.chainKey)), 32),
-        zeroPadValue(toBeArray(BigInt(proof.headerNumber)), 32).slice(0, 8),
+        toBeHex(BigInt(proof.headerNumber), 8),
         new Uint8Array(24),
-        zeroPadValue(toBeArray(txIndex), 32).slice(24),
+        toBeHex(txIndex, 8),
       ],
     ),
   );
@@ -379,7 +389,7 @@ async function createAttackCovenant(setup: Record<string, string>, opts: {
   }
   if (covenantId === null) throw new Error('CovenantCreated not found for attack covenant');
 
-  const borrowerCc = new Contract(cfg.covenantAddress(), covenantAbi, borrowerSigner());
+  const borrowerCc = new Contract(cfg.covenantAddress(), covenantAbi, borrowerCreditSigner());
   const acceptTx = await borrowerCc.acceptCovenant(covenantId, { gasLimit: 200_000 });
   await acceptTx.wait();
 
@@ -532,7 +542,7 @@ async function main(): Promise<void> {
       requiredRaw: BigInt(S!.requiredUsdcRaw) * 2n, // double requirement
     });
     const amount = BigInt(S!.requiredUsdcRaw); // half of the doubled requirement
-    const txHash = await payOnSepolia(borrowerSigner(), cfg.sourceUsdc(), S!.recipient, amount);
+    const txHash = await payOnSepolia(borrowerSourceSigner(), cfg.sourceUsdc(), S!.recipient, amount);
     const proof = await proveSepoliaTx(txHash);
     const args = await submitArgs(target.covenantId, proof);
     const before = await snapshot(target.facilityId, target.covenantId);
@@ -584,7 +594,7 @@ async function main(): Promise<void> {
   {
     const head = BigInt(await sourceProvider().getBlockNumber());
     const target = await createAttackCovenant(S!, { start: head - 40n, end: head - 10n }); // already closed
-    const txHash = await payOnSepolia(borrowerSigner(), cfg.sourceUsdc(), S!.recipient, BigInt(S!.requiredUsdcRaw));
+    const txHash = await payOnSepolia(borrowerSourceSigner(), cfg.sourceUsdc(), S!.recipient, BigInt(S!.requiredUsdcRaw));
     const proof = await proveSepoliaTx(txHash); // mined at current head > end
     const args = await submitArgs(target.covenantId, proof);
     await sendRejection(
@@ -607,7 +617,7 @@ async function main(): Promise<void> {
     const head = BigInt(await sourceProvider().getBlockNumber());
     const victim = new Wallet(keccak256(new Uint8Array([9]))).address; // deterministic non-recipient
     const target = await createAttackCovenant(S!, { start: head - 50n, end: head + 500n, recipient: victim });
-    const txHash = await payOnSepolia(borrowerSigner(), cfg.sourceUsdc(), S!.recipient, BigInt(S!.requiredUsdcRaw));
+    const txHash = await payOnSepolia(borrowerSourceSigner(), cfg.sourceUsdc(), S!.recipient, BigInt(S!.requiredUsdcRaw));
     const proof = await proveSepoliaTx(txHash);
     const args = await submitArgs(target.covenantId, proof);
     await sendRejection(
@@ -667,7 +677,7 @@ async function main(): Promise<void> {
     } else {
       const head = BigInt(await sourceProvider().getBlockNumber());
       const target = await createAttackCovenant(S!, { start: head - 50n, end: head + 500n });
-      const txHash = await payOnSepolia(borrowerSigner(), wrongToken, setup!.recipient, 1n);
+      const txHash = await payOnSepolia(borrowerSourceSigner(), wrongToken, setup!.recipient, 1n);
       const proof = await proveSepoliaTx(txHash);
       const args = await submitArgs(target.covenantId, proof);
       await sendRejection(
@@ -725,7 +735,7 @@ async function main(): Promise<void> {
       } catch { /* unrelated logs */ }
     }
     if (newCovenantId === null) throw new Error('CovenantCreated not found for L08');
-    const borrowerCc = new Contract(cfg.covenantAddress(), covenantAbi, borrowerSigner());
+    const borrowerCc = new Contract(cfg.covenantAddress(), covenantAbi, borrowerCreditSigner());
     await (await borrowerCc.acceptCovenant(newCovenantId, { gasLimit: 200_000 })).wait();
 
     const proof = await readJson<ProofPayload>(happyProofPath);

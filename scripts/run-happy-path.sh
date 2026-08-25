@@ -28,7 +28,10 @@ npm run worker:prove
 echo "== 4. Submit permissionless evidence and unlock the next tranche =="
 npm run worker:submit
 
-echo "== 5. Read final on-chain state =="
+echo "== 5. Draw the tranche unlocked by satisfied covenant =="
+npm run worker:draw-next
+
+echo "== 6. Read final on-chain state =="
 npm run worker:inspect
 
 echo

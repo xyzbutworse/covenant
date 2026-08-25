@@ -1,0 +1,20 @@
+{
+  "facilityId": "1",
+  "covenantId": "1",
+  "borrower": "0x5A51F01c7CeFbE164847342fB8F859B330Fb4B6A",
+  "drawAmountWei": "2000000000000000000",
+  "transactionHash": "0xff132b95ec49c27a7e43529ec4f30ebd5b773b9359a87aecfba9d86b4319f0c2",
+  "creditcoinBlock": 5369124,
+  "receiptStatus": 1,
+  "before": {
+    "unlockedWei": "4000000000000000000",
+    "drawnWei": "2000000000000000000",
+    "availableToDrawWei": "2000000000000000000"
+  },
+  "after": {
+    "unlockedWei": "4000000000000000000",
+    "drawnWei": "4000000000000000000",
+    "availableToDrawWei": "0"
+  },
+  "capturedAt": "2026-08-25T02:29:46.220Z"
+}

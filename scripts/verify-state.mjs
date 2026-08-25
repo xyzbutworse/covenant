@@ -15,7 +15,7 @@
  */
 import { readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
-import { JsonRpcProvider, Contract, keccak256, solidityPacked, zeroPadValue, toBeArray } from 'ethers';
+import { JsonRpcProvider, Contract, keccak256, solidityPacked, toBeHex, zeroPadValue, toBeArray } from 'ethers';
 
 const REPO = new URL('..', import.meta.url).pathname;
 
@@ -149,22 +149,22 @@ async function main() {
     // Consumed query identity recomputed from the recorded proof artifact.
     const proof = JSON.parse(await readFile(`${happyPathProof()}`, 'utf8'));
     const prover = new Contract(
-      '0x0000000000000000000000000000000000000fD2',
+      '0x0000000000000000000000000000000000000fd2',
       ['function calculateTxIndex((bytes32,(bytes32,bool)[])) view returns (uint64)'],
       provider,
     );
-    const txIndex = await prover.calculateTxIndex({
-      root: proof.merkleProof.root,
-      siblings: proof.merkleProof.siblings,
-    });
+    const txIndex = await prover.calculateTxIndex([
+      proof.merkleProof.root,
+      proof.merkleProof.siblings.map((sibling) => [sibling.hash, sibling.isLeft]),
+    ]);
     const queryId = keccak256(
       solidityPacked(
         ['bytes32', 'bytes8', 'bytes24', 'bytes8'],
         [
           zeroPadValue(toBeArray(BigInt(proof.chainKey)), 32),
-          zeroPadValue(toBeArray(BigInt(proof.headerNumber)), 32).slice(0, 8),
+          toBeHex(BigInt(proof.headerNumber), 8),
           new Uint8Array(24),
-          zeroPadValue(toBeArray(txIndex), 32).slice(24),
+          toBeHex(txIndex, 8),
         ],
       ),
     );

@@ -2,19 +2,39 @@
   "id": "L11-unauthorized-draw",
   "kind": "live-chain",
   "title": "Draw by non-borrower",
-  "invariantDefended": "Only facility.borrower draws; drawn <= unlocked always",
-  "recordedAtUTC": "2026-08-25T00:10:27.452Z",
+  "invariantDefended": "Role enforcement: only borrower draws",
+  "recordedAtUTC": "2026-08-25T02:34:49.197Z",
   "network": "Creditcoin CC3 Testnet (102031) / Ethereum Sepolia (11155111)",
-  "contract": null,
-  "facilityId": "0",
-  "covenantId": "0",
+  "contract": "0xEa07D0995993C86e32923c16e1eBA92c21a2Fbc9",
+  "facilityId": "1",
+  "covenantId": "1",
   "inputTransaction": null,
   "proofOrCallIdentifier": null,
-  "rejectionTxHash": null,
-  "revertedOnChain": null,
-  "revertReason": null,
-  "outcome": "skipped",
+  "rejectionTxHash": "0xb2dd1666ef8cec2988b623606fdfd255f57b7d95f088f1a86ec6334124564dea",
+  "revertedOnChain": true,
+  "revertReason": "NotBorrower()",
+  "outcome": "rejected",
   "stateBefore": null,
-  "stateAfter": null,
-  "notes": "Requires deployed contract + accepted covenant. No funded key in this environment yet."
+  "stateAfter": {
+    "creditcoinHead": 5369144,
+    "facility": {
+      "creditLimitCTC": "10.0",
+      "unlockedCTC": "4.0",
+      "drawnCTC": "4.0",
+      "status": 1,
+      "activeCovenantId": "0"
+    },
+    "covenant": {
+      "verifiedAmountRaw": "5000000",
+      "requiredAmountRaw": "5000000",
+      "startSourceBlock": "11561093",
+      "endSourceBlock": "11561193",
+      "proofDeadlineCreditcoinBlock": "5369388",
+      "freezeFrontierMarginSourceBlocks": "50",
+      "status": 3
+    },
+    "availableToDrawCTC": "0.0",
+    "isFreezableNow": false
+  },
+  "notes": null
 }

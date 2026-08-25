@@ -1,0 +1,23 @@
+{
+  "lender": "0x5ee198D6C1b8a3a1D5a7aBDcd8c3d906f907B2DB",
+  "borrower": "0x5A51F01c7CeFbE164847342fB8F859B330Fb4B6A",
+  "contract": "0xEa07D0995993C86e32923c16e1eBA92c21a2Fbc9",
+  "facilityId": "1",
+  "covenantId": "1",
+  "creditLimitWei": "10000000000000000000",
+  "trancheWei": "2000000000000000000",
+  "sourceChainKey": 1,
+  "sourceToken": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+  "recipient": "0x5ee198D6C1b8a3a1D5a7aBDcd8c3d906f907B2DB",
+  "requiredUsdcRaw": "5000000",
+  "startSourceBlock": "11561093",
+  "endSourceBlock": "11561193",
+  "proofDeadlineCreditcoinBlock": "5369388",
+  "freezeFrontierMarginSourceBlocks": "50",
+  "facilityMaturityCreditcoinBlock": "5370286",
+  "facilityTxHash": "0x32e655be9ee44bdfcb6d24da7e2d8e83dd2cf690552676a0a8ba7a5b15e133e7",
+  "initialDrawTxHash": "0x97ccd163d8e7dc9b05fd5017ae69433bfbaec934359f7d4d003db502efc3f622",
+  "covenantTxHash": "0xf5eb229d03c55680d09c8dc18b8930a12ef55f61847f29f9320a498ae1c57c16",
+  "covenantAcceptTxHash": "0x04134e3e671d4c62b4292a5373155faf1301684af3dd58b6924e2bbbd34c1b76",
+  "capturedAt": "2026-08-25T02:21:03.924Z"
+}

@@ -3,18 +3,38 @@
   "kind": "live-chain",
   "title": "Propose second covenant over an active one",
   "invariantDefended": "One active covenant per facility",
-  "recordedAtUTC": "2026-08-25T00:10:27.452Z",
+  "recordedAtUTC": "2026-08-25T02:34:34.125Z",
   "network": "Creditcoin CC3 Testnet (102031) / Ethereum Sepolia (11155111)",
-  "contract": null,
-  "facilityId": "0",
-  "covenantId": "0",
+  "contract": "0xEa07D0995993C86e32923c16e1eBA92c21a2Fbc9",
+  "facilityId": "1",
+  "covenantId": "1",
   "inputTransaction": null,
   "proofOrCallIdentifier": null,
   "rejectionTxHash": null,
   "revertedOnChain": null,
-  "revertReason": null,
-  "outcome": "skipped",
+  "revertReason": "NO REVERT (unexpected — refusing to broadcast)",
+  "outcome": "blocked-unexpected-success",
   "stateBefore": null,
-  "stateAfter": null,
-  "notes": "Requires deployed contract + accepted covenant. No funded key in this environment yet."
+  "stateAfter": {
+    "creditcoinHead": 5369143,
+    "facility": {
+      "creditLimitCTC": "10.0",
+      "unlockedCTC": "4.0",
+      "drawnCTC": "4.0",
+      "status": 1,
+      "activeCovenantId": "0"
+    },
+    "covenant": {
+      "verifiedAmountRaw": "5000000",
+      "requiredAmountRaw": "5000000",
+      "startSourceBlock": "11561093",
+      "endSourceBlock": "11561193",
+      "proofDeadlineCreditcoinBlock": "5369388",
+      "freezeFrontierMarginSourceBlocks": "50",
+      "status": 3
+    },
+    "availableToDrawCTC": "0.0",
+    "isFreezableNow": false
+  },
+  "notes": null
 }

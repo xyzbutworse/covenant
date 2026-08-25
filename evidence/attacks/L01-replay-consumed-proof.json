@@ -1,20 +1,29 @@
 {
   "id": "L01-replay-consumed-proof",
   "kind": "live-chain",
-  "title": "Replay the already-consumed valid proof",
-  "invariantDefended": "Query identity consumed once globally after semantic validation",
-  "recordedAtUTC": "2026-08-25T00:10:27.452Z",
   "network": "Creditcoin CC3 Testnet (102031) / Ethereum Sepolia (11155111)",
-  "contract": null,
-  "facilityId": "0",
-  "covenantId": "0",
-  "inputTransaction": null,
-  "proofOrCallIdentifier": null,
-  "rejectionTxHash": null,
-  "revertedOnChain": null,
-  "revertReason": null,
-  "outcome": "skipped",
-  "stateBefore": null,
-  "stateAfter": null,
-  "notes": "Needs completed happy path (real Sepolia USDC payment, Attestcoin proof, consumed submission) plus funded attack wallets."
+  "contract": "0xEa07D0995993C86e32923c16e1eBA92c21a2Fbc9",
+  "facilityId": "8",
+  "covenantId": "8",
+  "setupTransactions": {
+    "facility": "0x3a52c9f159bb10958dcab8b510a5eeb88e3a5b0de4f5ac6c94822032d9054276",
+    "covenant": "0x0efc10b3a60371b5b7e559352124f5e905105d892627360ce2dfe6b9ca6bb76a",
+    "acceptance": "0x52684d32c12a15bfbbf62c448614ff32def5b6fdab2767079364e05a0c6d936d"
+  },
+  "stateAfter": {
+    "covenantStatus": 2,
+    "availableToDrawWei": "2000000000000000000"
+  },
+  "title": "Consumed Attestcoin query reused against a fresh pending covenant",
+  "invariantDefended": "processedQueries is global across facilities and covenants",
+  "recordedAtUTC": "2026-08-25T03:22:18.532Z",
+  "inputTransaction": "0x6e5310a09814b6ffa301405c8046279623afa5e9f910d00c8102b40772cea545",
+  "proofOrCallIdentifier": "0xff2ddf35f00584982446e441ebc3a1997f79dda15a4bde8b8230c6c782e40189",
+  "rejectionTxHash": "0xbc692c2ef0c871462587ca02748f85fe1adaa6fee6a8a4b6f7111c2ee16dbacd",
+  "transactionExplorer": "https://creditcoin-testnet.blockscout.com/tx/0xbc692c2ef0c871462587ca02748f85fe1adaa6fee6a8a4b6f7111c2ee16dbacd",
+  "creditcoinBlock": 5369334,
+  "revertedOnChain": true,
+  "revertReason": "QueryAlreadyProcessed()",
+  "outcome": "rejected",
+  "notes": "The fresh covenant window includes the original source block, isolating the global consumed-query guard."
 }

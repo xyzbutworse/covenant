@@ -1,20 +1,40 @@
 {
   "id": "L05-wrong-recipient",
   "kind": "live-chain",
-  "title": "Payment to wrong recipient",
-  "invariantDefended": "Exact recipient binding on verified logs",
-  "recordedAtUTC": "2026-08-25T00:10:27.453Z",
+  "title": "Payment to wrong recipient (covenant demands a different address)",
+  "invariantDefended": "Recipient taken only from verified Transfer.to == committed recipient",
+  "recordedAtUTC": "2026-08-25T03:07:03.628Z",
   "network": "Creditcoin CC3 Testnet (102031) / Ethereum Sepolia (11155111)",
-  "contract": null,
-  "facilityId": "0",
-  "covenantId": "0",
-  "inputTransaction": null,
-  "proofOrCallIdentifier": null,
-  "rejectionTxHash": null,
-  "revertedOnChain": null,
-  "revertReason": null,
-  "outcome": "skipped",
+  "contract": "0xEa07D0995993C86e32923c16e1eBA92c21a2Fbc9",
+  "facilityId": "5",
+  "covenantId": "5",
+  "inputTransaction": "0x67364744237337454c535561925314a1259d699be8b81880d2df3f1429659d4e",
+  "proofOrCallIdentifier": "0x6f2239f6e06c49bf371d5fa5696ac8a697545c1dd545add1df9f4da10702a84d",
+  "rejectionTxHash": "0x6d32eb07c3d45ad6eae1a3707319bfc4cab7a29c2aeae654e9ccf7fdb8fd7c84",
+  "revertedOnChain": true,
+  "revertReason": "NoMatchingPayment()",
+  "outcome": "rejected",
   "stateBefore": null,
-  "stateAfter": null,
-  "notes": "Needs completed happy path (real Sepolia USDC payment, Attestcoin proof, consumed submission) plus funded attack wallets."
+  "stateAfter": {
+    "creditcoinHead": 5369273,
+    "facility": {
+      "creditLimitCTC": "10.0",
+      "unlockedCTC": "2.0",
+      "drawnCTC": "0.0",
+      "status": 1,
+      "activeCovenantId": "5"
+    },
+    "covenant": {
+      "verifiedAmountRaw": "0",
+      "requiredAmountRaw": "5000000",
+      "startSourceBlock": "11561218",
+      "endSourceBlock": "11561768",
+      "proofDeadlineCreditcoinBlock": "5370234",
+      "freezeFrontierMarginSourceBlocks": "50",
+      "status": 2
+    },
+    "availableToDrawCTC": "2.0",
+    "isFreezableNow": false
+  },
+  "notes": null
 }
