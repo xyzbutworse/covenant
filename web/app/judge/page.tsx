@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { PageChrome } from '../../components/PageChrome';
 import { StatusPill } from '../../components/StatusPill';
-import { Brand } from '../../components/Brand';
+import { SecurityDossier } from '../../components/SecurityDossier';
+import { ArrowIcon } from '../../components/LineIcons';
 import { publicEvidence } from '../../lib/public-evidence';
 
 /**
@@ -18,23 +19,13 @@ const SCENARIO = {
 
 export default function JudgePage() {
   return (
-    <PageChrome eyebrow="JUDGE MODE · NO WALLET REQUIRED">
-      <div className="pageHeading">
-        <div>
-          <span className="eyebrow">THE WHOLE PROJECT IN ONE MINUTE</span>
-          <h1>Read this once.<br />You understand COVENANT.</h1>
-        </div>
-        <StatusPill tone={publicEvidence.complete ? 'good' : 'warn'}>
-          {publicEvidence.complete ? 'REAL EVIDENCE LIVE' : 'EVIDENCE INCOMPLETE'}
-        </StatusPill>
-      </div>
-
-      <section className="judgeHero">
-        <Brand compact />
-        <p className="judgeOneLiner">
-          Credit lines that unlock only when external obligations are cryptographically proven.
-        </p>
-      </section>
+    <PageChrome eyebrow="JUDGE MODE · NO WALLET REQUIRED" instrumented>
+      <SecurityDossier
+        evidence={publicEvidence.links}
+        complete={publicEvidence.complete}
+        heading="Credit follows proof."
+        summary="Credit lines that unlock only when external obligations are cryptographically proven. No wallet is needed to inspect this live testnet record."
+      />
 
       <section className="judgeFlow">
         <article className="judgeCard">
@@ -84,7 +75,6 @@ export default function JudgePage() {
       <section className="judgeNegative">
         <div className="panelTitle">
           <div>
-            <span className="eyebrow">AND THE NEGATIVE CASE</span>
             <h2>Fake evidence does nothing.</h2>
           </div>
           <StatusPill tone="bad">REJECTED ON-CHAIN SHAPE</StatusPill>
@@ -94,7 +84,7 @@ export default function JudgePage() {
           <li><b>R2</b><span><b>Insufficient payment:</b> a partial transfer is accepted as evidence and still unlocks nothing until accumulation reaches the full requirement.</span></li>
           <li><b>R3</b><span><b>Early freeze:</b> a lender cannot punish the borrower while Attestcoin has not yet attested past the covenant window — freeze needs BOTH the deadline and the observable frontier.</span></li>
         </ul>
-        <Link href="/attacks" className="ghostBtn">Inspect the adversarial evidence →</Link>
+        <Link href="/attacks" className="ghostBtn actionWithIcon">Inspect the adversarial evidence <ArrowIcon /></Link>
       </section>
 
       <section className="judgeLinks">
@@ -103,10 +93,9 @@ export default function JudgePage() {
         <Link href="/docs" className="ghostBtn">Protocol notes</Link>
       </section>
 
-      <section className="evidenceBand">
+      <section className="evidenceBand" id="public-evidence-ledger">
         <div className="bandHead">
           <div>
-            <span className="eyebrow">ONE CAUSAL STORY · SIX PUBLIC LINKS</span>
             <h2>Payment to proof to capital movement.</h2>
           </div>
           <StatusPill tone={publicEvidence.complete ? 'good' : 'warn'}>
@@ -121,7 +110,7 @@ export default function JudgePage() {
                 <b>{item.label}:</b> {item.detail}.{' '}
                 {item.href ? (
                   <a href={item.href} target="_blank" rel="noreferrer" className="proofRef">
-                    Inspect evidence ↗
+                    Inspect evidence <ArrowIcon external />
                   </a>
                 ) : (
                   <span className="proofRef proofRefMissing">Awaiting evidence</span>

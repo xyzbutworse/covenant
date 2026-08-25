@@ -1,17 +1,22 @@
 import { Brand } from './Brand';
 import { BottomNav } from './BottomNav';
-import { DataField } from './DataField';
 
-export function PageChrome({ children, eyebrow }: { children: React.ReactNode; eyebrow?: string }) {
+export function PageChrome({ children, eyebrow, instrumented = false }: { children: React.ReactNode; eyebrow?: string; instrumented?: boolean }) {
   return (
-    <main className="appShell">
-      <DataField />
-      <header className="topBar">
+    <main className={`appShell ${instrumented ? 'appShellInstrumented' : ''}`}>
+      <div className="paperField" aria-hidden="true" />
+      {!instrumented && (
+        <header className="topBar">
+          <Brand compact />
+          <BottomNav />
+          <div className="networkBadge"><i /> {eyebrow || 'ATTESTCOIN / CREDITCOIN'}</div>
+        </header>
+      )}
+      <div className={`appContent ${instrumented ? 'appContentInstrumented' : ''}`}>{children}</div>
+      <footer className="siteFooter">
         <Brand compact />
-        <div className="networkBadge"><i /> {eyebrow || 'ATTESTCOIN / CREDITCOIN'}</div>
-      </header>
-      <div className="appContent">{children}</div>
-      <BottomNav />
+        <span>PUBLIC TESTNET EVIDENCE · ETHEREUM SEPOLIA + CREDITCOIN CC3</span>
+      </footer>
     </main>
   );
 }

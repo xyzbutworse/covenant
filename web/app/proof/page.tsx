@@ -1,6 +1,7 @@
 import { PageChrome } from '../../components/PageChrome';
 import { StatusPill } from '../../components/StatusPill';
 import { publicEvidence } from '../../lib/public-evidence';
+import { ArrowIcon } from '../../components/LineIcons';
 
 const sourceTx = process.env.NEXT_PUBLIC_SOURCE_TX_HASH || '';
 const evidenceTx = process.env.NEXT_PUBLIC_EVIDENCE_TX_HASH || '';
@@ -16,7 +17,7 @@ function RefLink({ label, href, missing }: { label: string; href: string | null;
   if (!href) return <span className="proofRef proofRefMissing">{missing ?? `${label}: awaiting live evidence`}</span>;
   return (
     <a className="proofRef" href={href} target="_blank" rel="noreferrer">
-      {label} ↗
+      {label} <ArrowIcon external />
     </a>
   );
 }
@@ -83,7 +84,7 @@ export default function ProofPage() {
     {
       n: '07',
       net: 'COVENANT STATE TRANSITION',
-      title: 'EvidenceAccepted → CovenantSatisfied.',
+      title: 'EvidenceAccepted to CovenantSatisfied.',
       body: 'Only after every check passes does the contract mark the covenant satisfied and expand drawable credit by exactly one tranche.',
       links: <RefLink label="Evidence settlement transaction" href={txLink(creditExplorer, evidenceTx)} />,
     },

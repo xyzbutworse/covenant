@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-25T12:45:31Z",
+  "title": "Design System: COVENANT",
+  "extensions": {
+    "colorMeta": {
+      "cobalt-thread": {
+        "role": "primary",
+        "displayName": "Cobalt Security Thread",
+        "canonical": "#2457ce",
+        "tonalRamp": ["oklch(22% 0.12 263)", "oklch(31% 0.15 263)", "oklch(40% 0.18 263)", "oklch(49% 0.2 263)", "oklch(59% 0.17 263)", "oklch(70% 0.13 263)", "oklch(82% 0.08 263)", "oklch(94% 0.025 263)"]
+      },
+      "cobalt-deep": {
+        "role": "primary",
+        "displayName": "Deep Cobalt Ink",
+        "canonical": "#153f9f",
+        "tonalRamp": ["oklch(18% 0.09 263)", "oklch(26% 0.12 263)", "oklch(34% 0.15 263)", "oklch(43% 0.17 263)", "oklch(54% 0.15 263)", "oklch(66% 0.11 263)", "oklch(80% 0.065 263)", "oklch(94% 0.02 263)"]
+      },
+      "oxblood-seal": {
+        "role": "secondary",
+        "displayName": "Oxblood Proof Seal",
+        "canonical": "#8a2636",
+        "tonalRamp": ["oklch(18% 0.07 18)", "oklch(27% 0.1 18)", "oklch(36% 0.12 18)", "oklch(45% 0.14 18)", "oklch(56% 0.12 18)", "oklch(68% 0.09 18)", "oklch(82% 0.055 18)", "oklch(95% 0.018 18)"]
+      },
+      "verified-mint": {
+        "role": "tertiary",
+        "displayName": "Verified Mint",
+        "canonical": "#247556",
+        "tonalRamp": ["oklch(19% 0.045 160)", "oklch(28% 0.065 160)", "oklch(38% 0.08 160)", "oklch(48% 0.09 160)", "oklch(59% 0.08 160)", "oklch(71% 0.06 160)", "oklch(84% 0.035 160)", "oklch(95% 0.012 160)"]
+      },
+      "caution-amber": {
+        "role": "tertiary",
+        "displayName": "Caution Amber",
+        "canonical": "#8b6420",
+        "tonalRamp": ["oklch(19% 0.045 78)", "oklch(29% 0.07 78)", "oklch(39% 0.09 78)", "oklch(49% 0.1 78)", "oklch(60% 0.09 78)", "oklch(72% 0.07 78)", "oklch(85% 0.04 78)", "oklch(95% 0.014 78)"]
+      },
+      "midnight-ink": {
+        "role": "neutral",
+        "displayName": "Midnight Engraving Ink",
+        "canonical": "#10233e",
+        "tonalRamp": ["oklch(15% 0.035 255)", "oklch(23% 0.04 255)", "oklch(32% 0.04 255)", "oklch(43% 0.036 255)", "oklch(56% 0.03 255)", "oklch(69% 0.024 255)", "oklch(83% 0.015 255)", "oklch(95% 0.006 255)"]
+      },
+      "soft-ink": {
+        "role": "neutral",
+        "displayName": "Soft Ledger Ink",
+        "canonical": "#43536a",
+        "tonalRamp": ["oklch(17% 0.025 255)", "oklch(27% 0.03 255)", "oklch(38% 0.032 255)", "oklch(49% 0.03 255)", "oklch(61% 0.025 255)", "oklch(73% 0.019 255)", "oklch(85% 0.012 255)", "oklch(95% 0.005 255)"]
+      },
+      "faint-ink": {
+        "role": "neutral",
+        "displayName": "Faint Serial Ink",
+        "canonical": "#566171",
+        "tonalRamp": ["oklch(18% 0.016 255)", "oklch(29% 0.02 255)", "oklch(40% 0.021 255)", "oklch(51% 0.02 255)", "oklch(63% 0.017 255)", "oklch(75% 0.013 255)", "oklch(86% 0.008 255)", "oklch(95% 0.004 255)"]
+      },
+      "security-paper": {
+        "role": "neutral",
+        "displayName": "Security Paper",
+        "canonical": "#f3efe2",
+        "tonalRamp": ["oklch(18% 0.014 88)", "oklch(29% 0.016 88)", "oklch(41% 0.018 88)", "oklch(53% 0.019 88)", "oklch(66% 0.019 88)", "oklch(78% 0.017 88)", "oklch(88% 0.014 88)", "oklch(95% 0.012 88)"]
+      },
+      "paper-deep": {
+        "role": "neutral",
+        "displayName": "Deep Paper Fiber",
+        "canonical": "#e9e2d1",
+        "tonalRamp": ["oklch(17% 0.016 80)", "oklch(29% 0.019 80)", "oklch(41% 0.021 80)", "oklch(53% 0.023 80)", "oklch(65% 0.023 80)", "oklch(77% 0.021 80)", "oklch(87% 0.019 80)", "oklch(94% 0.016 80)"]
+      },
+      "paper-bright": {
+        "role": "neutral",
+        "displayName": "Bright Instrument Stock",
+        "canonical": "#faf7ed",
+        "tonalRamp": ["oklch(18% 0.01 88)", "oklch(30% 0.012 88)", "oklch(42% 0.014 88)", "oklch(55% 0.015 88)", "oklch(68% 0.015 88)", "oklch(80% 0.014 88)", "oklch(90% 0.012 88)", "oklch(97% 0.01 88)"]
+      },
+      "engraved-line": {
+        "role": "neutral",
+        "displayName": "Engraved Rule",
+        "canonical": "rgba(16, 35, 62, 0.25)",
+        "tonalRamp": ["rgba(16, 35, 62, 0.92)", "rgba(16, 35, 62, 0.76)", "rgba(16, 35, 62, 0.60)", "rgba(16, 35, 62, 0.45)", "rgba(16, 35, 62, 0.32)", "rgba(16, 35, 62, 0.22)", "rgba(16, 35, 62, 0.12)", "rgba(16, 35, 62, 0.05)"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline Rule",
+        "canonical": "rgba(16, 35, 62, 0.12)",
+        "tonalRamp": ["rgba(16, 35, 62, 0.72)", "rgba(16, 35, 62, 0.58)", "rgba(16, 35, 62, 0.45)", "rgba(16, 35, 62, 0.33)", "rgba(16, 35, 62, 0.24)", "rgba(16, 35, 62, 0.16)", "rgba(16, 35, 62, 0.09)", "rgba(16, 35, 62, 0.04)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Dossier Display", "purpose": "Core proposition inside the signature dossier." },
+      "headline": { "displayName": "Editorial Headline", "purpose": "Page and section statements." },
+      "title": { "displayName": "Instrument Title", "purpose": "Stages, metrics, proof steps, and panels." },
+      "body": { "displayName": "Evidence Explanation", "purpose": "Direct explanatory copy and protocol context." },
+      "label": { "displayName": "Serial Label", "purpose": "Network state, serials, statuses, and technical metadata." }
+    },
+    "shadows": [
+      { "name": "dossier-ambient", "value": "0 28px 72px rgba(16,35,62,.13)", "purpose": "Low structural lift under the complete proof instrument." },
+      { "name": "moving-seal", "value": "0 7px 18px rgba(16,35,62,.18)", "purpose": "Positions the active rosette above the woven thread." },
+      { "name": "issued-seal", "value": "0 12px 28px rgba(90,31,42,.18)", "purpose": "Separates the final proof seal from the printed stock." }
+    ],
+    "motion": [
+      { "name": "proof-progress", "value": "120ms linear", "purpose": "Maps pointer travel to completion along the security thread." },
+      { "name": "seal-travel", "value": "160ms cubic-bezier(.16,1,.3,1)", "purpose": "Moves the active proof medallion between evidence stages." },
+      { "name": "state-hover", "value": "180ms ease-out", "purpose": "Changes link, navigation, and evidence-row ink without visual noise." },
+      { "name": "action-lift", "value": "180ms cubic-bezier(.16,1,.3,1)", "purpose": "Lifts primary and ghost actions by 2px on hover." },
+      { "name": "reduced-motion", "value": ".01ms", "purpose": "Shows the completed proof state with near-zero transition duration." }
+    ],
+    "breakpoints": [
+      { "name": "compact-desktop", "value": "1100px" },
+      { "name": "mobile", "value": "760px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "A compact midnight action for the next protocol or inspection step.",
+      "html": "<button class=\"ds-button-primary\">OPEN LIVE FACILITY</button>",
+      "css": ".ds-button-primary { min-height: 48px; padding: 0 20px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--ink, #10233e); border-radius: 2px; background: var(--ink, #10233e); color: var(--paper-bright, #faf7ed); font: 800 12px 'Covenant Sans', Arial, sans-serif; transition: transform 180ms cubic-bezier(.16,1,.3,1), background 180ms ease-out; } .ds-button-primary:hover { transform: translateY(-2px); background: var(--cobalt-deep, #153f9f); } .ds-button-primary:focus-visible { outline: 3px solid var(--cobalt, #2457ce); outline-offset: 3px; } .ds-button-primary:active { transform: translateY(0); }"
+    },
+    {
+      "name": "Ghost Action",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "A paper action for secondary navigation and evidence inspection.",
+      "html": "<button class=\"ds-button-ghost\">FOLLOW THE PROOF CHAIN</button>",
+      "css": ".ds-button-ghost { min-height: 48px; padding: 0 20px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--ink, #10233e); border-radius: 2px; background: transparent; color: var(--ink, #10233e); font: 800 12px 'Covenant Sans', Arial, sans-serif; transition: transform 180ms cubic-bezier(.16,1,.3,1), background 180ms ease-out; } .ds-button-ghost:hover { transform: translateY(-2px); background: rgba(16,35,62,.06); } .ds-button-ghost:focus-visible { outline: 3px solid var(--cobalt, #2457ce); outline-offset: 3px; } .ds-button-ghost:active { transform: translateY(0); }"
+    },
+    {
+      "name": "Verified Status",
+      "kind": "chip",
+      "refersTo": "status-verified",
+      "description": "An explicit public-state label with mint ink and a precision frame.",
+      "html": "<span class=\"ds-status-verified\">PUBLIC · VERIFIED</span>",
+      "css": ".ds-status-verified { min-height: 31px; padding: 6px 10px; display: inline-flex; align-items: center; border: 1px solid currentColor; border-radius: 2px; background: transparent; color: var(--mint, #247556); font: 800 9px/1.2 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; letter-spacing: .08em; white-space: nowrap; }"
+    },
+    {
+      "name": "Evidence Field",
+      "kind": "input",
+      "refersTo": "evidence-field",
+      "description": "A square monospaced field for addresses, amounts, blocks, and proof material.",
+      "html": "<label class=\"ds-field\"><span>CREDITCOIN MATURITY BLOCK</span><input value=\"12345678\" readonly></label>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 7px; color: var(--ink-faint, #566171); font: 800 8px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; letter-spacing: .09em; } .ds-field input { height: 46px; width: 100%; padding: 11px; border: 1px solid var(--line, rgba(16,35,62,.25)); border-radius: 0; background: var(--paper, #f3efe2); color: var(--ink, #10233e); font: 600 11px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; outline: none; } .ds-field input:hover { border-color: var(--ink, #10233e); } .ds-field input:focus-visible { border-color: var(--cobalt, #2457ce); box-shadow: inset 0 0 0 1px var(--cobalt, #2457ce); }"
+    },
+    {
+      "name": "Masthead Navigation Item",
+      "kind": "nav",
+      "description": "A restrained navigation cell separated by document rules.",
+      "html": "<a class=\"ds-nav-item\" href=\"#\">EVIDENCE</a>",
+      "css": ".ds-nav-item { min-height: 44px; padding: 0 16px; display: inline-grid; place-items: center; border-inline-end: 1px solid var(--line-soft, rgba(16,35,62,.12)); background: transparent; color: var(--ink-soft, #43536a); font: 600 9px 'Covenant Sans', Arial, sans-serif; text-decoration: none; transition: color 180ms ease-out, background 180ms ease-out; } .ds-nav-item:hover { color: var(--cobalt, #2457ce); background: rgba(36,87,206,.04); } .ds-nav-item:focus-visible { outline: 3px solid var(--cobalt, #2457ce); outline-offset: -3px; } .ds-nav-item:active { background: rgba(36,87,206,.08); }"
+    },
+    {
+      "name": "Serial Evidence Entry",
+      "kind": "custom",
+      "description": "An independently inspectable public record with a medallion, serial, label, and line icon.",
+      "html": "<a class=\"ds-serial-entry\" href=\"#\"><span class=\"ds-serial-medallion\">A</span><b>A-0001</b><span>SEPOLIA PAYMENT TX</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h13M14 7l5 5-5 5\"/></svg></a>",
+      "css": ".ds-serial-entry { min-height: 74px; padding: 13px 15px; display: grid; grid-template-columns: 32px minmax(0,1fr) auto; grid-template-rows: auto auto; gap: 5px 10px; border: 1px solid var(--line, rgba(16,35,62,.25)); background: var(--paper-bright, #faf7ed); color: var(--ink, #10233e); text-decoration: none; transition: color 160ms ease-out, background 160ms ease-out; } .ds-serial-entry:hover { color: var(--cobalt, #2457ce); background: rgba(36,87,206,.04); } .ds-serial-entry:focus-visible { outline: 3px solid var(--cobalt, #2457ce); outline-offset: 3px; } .ds-serial-medallion { grid-row: 1 / 3; width: 27px; height: 27px; display: grid; place-items: center; align-self: center; border: 1px solid currentColor; border-radius: 50%; color: var(--cobalt, #2457ce); font: 400 15px 'Covenant Display', Georgia, serif; } .ds-serial-entry b { font: 800 11px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; letter-spacing: .1em; } .ds-serial-entry > span:nth-of-type(2) { color: var(--ink-soft, #43536a); font: 700 9px 'Covenant Sans', Arial, sans-serif; text-transform: uppercase; } .ds-serial-entry svg { grid-column: 3; grid-row: 1 / 3; align-self: center; width: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; }"
+    },
+    {
+      "name": "Proof Stage",
+      "kind": "custom",
+      "description": "An engraved row for one causal event in the proof sequence.",
+      "html": "<a class=\"ds-proof-stage\" href=\"#\"><b>03</b><strong>CREDITCOIN VERIFICATION</strong><span class=\"ds-stage-rosette\">C</span><small>Native verifier call and evidence acceptance</small><em>INSPECT</em></a>",
+      "css": ".ds-proof-stage { min-height: 68px; padding: 7px 12px; display: grid; grid-template-columns: 50px minmax(150px,1fr) 52px minmax(180px,1.15fr) 70px; align-items: center; gap: 12px; border: 1px solid var(--line-soft, rgba(16,35,62,.12)); background: rgba(250,247,237,.76); color: var(--ink, #10233e); text-decoration: none; transition: background 180ms ease-out; } .ds-proof-stage:hover { background: rgba(36,87,206,.045); } .ds-proof-stage:focus-visible { outline: 3px solid var(--cobalt, #2457ce); outline-offset: 3px; } .ds-proof-stage b { color: var(--cobalt, #2457ce); font: 400 28px 'Covenant Display', Georgia, serif; } .ds-proof-stage strong { font: 800 13px 'Covenant Sans', Arial, sans-serif; letter-spacing: .035em; } .ds-stage-rosette { width: 40px; height: 40px; display: grid; place-items: center; border: 3px double var(--mint, #247556); border-radius: 50%; color: var(--mint, #247556); font: 400 18px 'Covenant Display', Georgia, serif; } .ds-proof-stage small { color: var(--ink-soft, #43536a); font: 400 11px/1.35 'Covenant Sans', Arial, sans-serif; } .ds-proof-stage em { justify-self: end; color: var(--mint, #247556); font: 800 8px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; letter-spacing: .08em; font-style: normal; }"
+    },
+    {
+      "name": "Issued Proof Seal",
+      "kind": "custom",
+      "description": "The restrained oxblood authentication mark for a completed proof record.",
+      "html": "<div class=\"ds-proof-seal\"><svg viewBox=\"0 0 100 100\" aria-hidden=\"true\"><polygon points=\"50,2 57,8 66,5 70,14 80,14 81,24 90,29 85,38 98,50 85,62 90,71 81,76 80,86 70,86 66,95 57,92 50,98 43,92 34,95 30,86 20,86 19,76 10,71 15,62 2,50 15,38 10,29 19,24 20,14 30,14 34,5 43,8\"/><circle cx=\"50\" cy=\"50\" r=\"37\"/><path d=\"M50 25 58 42 76 50 58 58 50 76 42 58 24 50 42 42Z\"/></svg></div>",
+      "css": ".ds-proof-seal { width: 126px; height: 126px; filter: drop-shadow(0 3px 1px rgba(70,20,28,.14)); transition: transform 180ms cubic-bezier(.16,1,.3,1); } .ds-proof-seal:hover { transform: rotate(-4deg) scale(1.02); } .ds-proof-seal svg { width: 100%; height: 100%; overflow: visible; } .ds-proof-seal polygon { fill: var(--oxblood, #8a2636); stroke: var(--paper-bright, #faf7ed); stroke-width: 1; } .ds-proof-seal circle { fill: var(--paper-bright, #faf7ed); stroke: var(--oxblood, #8a2636); stroke-width: 1.5; } .ds-proof-seal path { fill: none; stroke: var(--oxblood, #8a2636); stroke-width: 1.4; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Security Print Instrument",
+    "overview": "COVENANT treats public protocol evidence as a financial instrument, not a dashboard. Warm security stock, engraved rules, serial notation, guilloche fields, a woven cobalt thread, and an oxblood verification seal give public records the visual weight of an issued document. The finish stays crisp and contemporary. Ornament always supports sequence, authenticity, or inspection.\n\nThe system leads with financial consequence and preserves a strict distinction between verified, pending, local, skipped, and rejected evidence. Large editorial type makes the causal claim readable. Compact sans-serif and monospaced labels carry technical detail, network state, serials, and status without competing with the proof story.",
+    "keyCharacteristics": [
+      "Warm ivory security stock with midnight engraved structure.",
+      "A 30/70 editorial dossier and proof-instrument split on wide screens.",
+      "Cobalt threads and medallions express causal sequence.",
+      "Oxblood seals mark verification and rejection boundaries.",
+      "Mint indicates verified public state, with text labels beside every color state.",
+      "Real explorer links appear as serial ledger entries, never promotional cards."
+    ],
+    "rules": [
+      { "name": "The Ink Economy Rule", "body": "Cobalt describes evidence flow, oxblood describes consequence, and mint describes verified state. Do not use these colors as unrelated decoration.", "section": "colors" },
+      { "name": "The State Needs Language Rule", "body": "Every state color ships with an explicit label such as VERIFIED, REJECTED, PENDING, LOCAL, or SKIPPED.", "section": "colors" },
+      { "name": "The Two Voices Rule", "body": "Use the serif for meaning and consequence. Use sans or mono for evidence, operation, and state.", "section": "typography" },
+      { "name": "The Label Discipline Rule", "body": "Small uppercase labels remain short. Full sentences belong in body text.", "section": "typography" },
+      { "name": "The Continuous Instrument Rule", "body": "Related proof, state, and evidence sections touch and share keylines. Do not split one causal record into detached cards.", "section": "layout" },
+      { "name": "The Printed-First Rule", "body": "Use rules, tone, and linework before shadow. Only the issued instrument and movable proof marks sit above the paper.", "section": "elevation" },
+      { "name": "The Geometry Has Meaning Rule", "body": "Rectangles hold records, circles authenticate them, and the vertical thread connects causality.", "section": "shapes" }
+    ],
+    "dos": [
+      "**Do** lead public pages with one financial consequence and its causal proof record.",
+      "**Do** keep explorer links, transaction identifiers, contract state, and rejection evidence independently inspectable.",
+      "**Do** preserve explicit REAL, LOCAL, SKIPPED, PENDING, VERIFIED, and REJECTED language.",
+      "**Do** use authored SVG line icons, rosettes, guilloche fields, and seals.",
+      "**Do** preserve keyboard focus, mobile reading order, and reduced-motion completion.",
+      "**Do** use ornament to clarify authenticity, sequence, or state."
+    ],
+    "donts": [
+      "**Don't** convert evidence into dashboard tiles, rounded app cards, charts, token art, or generic crypto imagery.",
+      "**Don't** use gradients, glass effects, neon, photographic paper, or heavy vintage distressing.",
+      "**Don't** detach the serial ledger from the proof instrument it documents.",
+      "**Don't** use color as the only status signal.",
+      "**Don't** invent transaction state, financial performance, borrower behavior, or production-readiness claims.",
+      "**Don't** add motion without a causal or navigational purpose."
+    ]
+  }
+}

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { CheckIcon, XIcon } from './LineIcons';
 
 const stages = [
   ['OBLIGATION OPEN', '5.00 test USDC due on Ethereum Sepolia', 'violet'],
@@ -27,7 +28,7 @@ export function JudgeDemo() {
       </div>
       <div className="demoMain">
         <div className={`proofOrb proofOrb-${attack ? 'bad' : stages[step][2]}`}>
-          <span>{attack ? '×' : step === stages.length - 1 ? '✓' : step + 1}</span>
+          <span>{attack ? <XIcon /> : step === stages.length - 1 ? <CheckIcon /> : step + 1}</span>
         </div>
         <div>
           <div className="demoLabel">{attack ? 'REPLAY REJECTED' : stages[step][0]}</div>

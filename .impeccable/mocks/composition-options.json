@@ -1,0 +1,42 @@
+{
+  "title": "Choose the Security Print composition",
+  "question": "Pick the layout COVENANT should use across desktop and mobile. Every option keeps the same verified evidence and wallet actions.",
+  "options": [
+    {
+      "id": "split-instrument",
+      "label": "Split Instrument",
+      "kicker": "ORIGINAL DIRECTION",
+      "thesis": "The obligation and credit draw face each other across one central proof seal.",
+      "palette": ["#F4F0E4", "#12233B", "#315BD6", "#8B2635", "#B7F5D0"],
+      "materials": ["guilloche engraving", "security thread", "serial ink"],
+      "viewport": "A monumental 5 USDC to proof to 4 CTC relationship dominates the first view, with the causal record beneath it.",
+      "risk": "The wide split needs careful mobile reflow.",
+      "comp": ".impeccable/mocks/decision/security-print-instrument.webp"
+    },
+    {
+      "id": "ledger-led",
+      "label": "Evidence Ledger",
+      "kicker": "SEQUENCE FIRST",
+      "thesis": "One continuous security document makes all six causal links visible at once.",
+      "palette": ["#F4F0E4", "#12233B", "#315BD6", "#8B2635", "#B7F5D0"],
+      "materials": ["guilloche engraving", "proof stamps", "security rule"],
+      "viewport": "The six-step proof rail runs from 5 USDC at the left edge through the central seal to 4 CTC at the right edge.",
+      "risk": "Dense horizontal evidence needs deliberate small-screen stacking.",
+      "comp": ".impeccable/mocks/security-print-instrument-ledger.webp"
+    },
+    {
+      "id": "dossier-led",
+      "label": "Proof Dossier",
+      "kicker": "IMPECCABLE'S PICK",
+      "thesis": "An editorial introduction sits beside a numbered proof instrument with public evidence always in view.",
+      "palette": ["#F4F0E4", "#12233B", "#315BD6", "#8B2635", "#B7F5D0"],
+      "materials": ["guilloche engraving", "vertical security thread", "serial folio"],
+      "viewport": "The left column explains the facility while the right column carries the six-stage causal record and proof seals.",
+      "risk": "The document language needs crisp interaction cues so actions remain obvious.",
+      "comp": ".impeccable/mocks/security-print-instrument-dossier.webp"
+    }
+  ],
+  "buildPath": {"value": "comp", "toggle": false},
+  "canon": false,
+  "steer": true
+}

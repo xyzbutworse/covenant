@@ -2,6 +2,7 @@ import { PageChrome } from '../../components/PageChrome';
 import { StatusPill } from '../../components/StatusPill';
 import { attacks } from '../../lib/demo';
 import { loadLiveAttackRecords, loadLocalAdversarialIndex } from '../../lib/evidence';
+import { ArrowIcon } from '../../components/LineIcons';
 
 const creditExplorer = process.env.NEXT_PUBLIC_CREDITCOIN_EXPLORER || 'https://creditcoin-testnet.blockscout.com';
 const sourceExplorer = process.env.NEXT_PUBLIC_SOURCE_EXPLORER || 'https://sepolia.etherscan.io';
@@ -72,7 +73,7 @@ export default async function AttacksPage() {
                 <>
                   {' '}
                   <a href={`${creditExplorer}/tx/${record.rejectionTxHash}`} target="_blank" rel="noreferrer" className="proofRef">
-                    rejection tx ↗
+                    rejection tx <ArrowIcon external />
                   </a>
                 </>
               )}
