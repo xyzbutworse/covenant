@@ -1,0 +1,57 @@
+{
+  "capturedAt": "2026-08-25T03:44:10Z",
+  "siteUrl": "https://covenant-delta.vercel.app",
+  "judgeUrl": "https://covenant-delta.vercel.app/judge",
+  "deploymentId": "dpl_3ySRDjr2i6d1bc7zD8YSRmhtSNAp",
+  "deploymentStatus": "READY",
+  "desktop": {
+    "viewport": "1440x1000",
+    "realEvidenceBadge": true,
+    "publicEvidenceLinks": 6,
+    "browserErrors": 0
+  },
+  "mobile": {
+    "viewport": "390x844",
+    "documentWidth": 390,
+    "horizontalOverflow": false,
+    "realEvidenceBadge": true,
+    "publicEvidenceLinks": 6,
+    "browserErrors": 0
+  },
+  "facility": {
+    "mode": "LIVE ON-CHAIN",
+    "facilityId": "1",
+    "covenantId": "1",
+    "facilityStatus": "ACTIVE",
+    "covenantStatus": "SATISFIED",
+    "drawn": "4.0 CTC",
+    "fixtureFallback": false
+  },
+  "attacks": {
+    "noRecordsFallback": false,
+    "creditcoinTransactionLinks": 10,
+    "wrongPayerVisible": true,
+    "replayReasonVisible": "QueryAlreadyProcessed()",
+    "subThresholdEvidenceVisible": true
+  },
+  "publicLinkChecks": {
+    "expected": 6,
+    "http200": 6
+  },
+  "finalReadOnlyReplay": {
+    "result": "PASS",
+    "chainId": 102031,
+    "attestedSepoliaHeight": 11561470,
+    "covenantStatus": "Satisfied (3)",
+    "queryConsumed": true,
+    "unlockedWei": "4000000000000000000"
+  },
+  "demoVideo": {
+    "file": "evidence/site/covenant-demo-60s.mp4",
+    "durationSeconds": 59.233333,
+    "codec": "h264",
+    "resolution": "1440x900",
+    "frameRate": 30,
+    "audio": false
+  }
+}
