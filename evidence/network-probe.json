@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "kind": "network-discovery-probe",
+    "note": "Read-only validation of the live Attestcoin/CC3 environment. NOT deployment evidence.",
+    "capturedAtUTC": "2026-08-24T23:51:06Z",
+    "probedBy": "worker/src/discover.ts (@gluwa/usc-sdk@0.18.0) + raw eth_call selector checks",
+    "sourceOfTruth": "https://github.com/gluwa/attestcoin-protocol-examples (renamed from usc-testnet-bridge-examples)"
+  },
+  "creditcoin": {
+    "network": "Creditcoin CC3 Testnet",
+    "chainId": 102031,
+    "rpc": "https://rpc.cc3-testnet.creditcoin.network",
+    "headBlockAtProbe": 5369507,
+    "blockProverPrecompile": "0x0000000000000000000000000000000000000fD2",
+    "chainInfoPrecompile": "0x0000000000000000000000000000000000000fD3",
+    "precompileCodeVisibleViaEthGetCode": false,
+    "precompileNote": "Native precompiles return empty eth_getCode by design; liveness proven via successful eth_call."
+  },
+  "selectorCompatibility": {
+    "method": "get_latest_attestation_height_and_hash(uint64)",
+    "selector": "0x809112da",
+    "matchesCovenantSolidityInterface": true,
+    "liveResponse": {
+      "height": 11560330,
+      "isAttestation": true,
+      "exists": true
+    }
+  },
+  "supportedSourceChains": [
+    {
+      "key": 1,
+      "chainId": 11155111,
+      "name": "Sepolia",
+      "latestAttestedHeight": 11560320,
+      "hash": "0x5135c084c9576f3a3df151779910db5d34e0b36b517a22cf2df4056878e820b1"
+    },
+    {
+      "key": 3,
+      "chainId": 1,
+      "name": "Ethereum",
+      "latestAttestedHeight": 25828390
+    }
+  ],
+  "proofBuilder": {
+    "url": "https://prover.cc3-testnet.creditcoin.network",
+    "attestedHeightEndpoint": "/api/v1/attested-height/1",
+    "httpStatus": 200,
+    "attestedHeight": 11560330,
+    "consistentWithChainInfo": true
+  },
+  "sepoliaSource": {
+    "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
+    "headBlockAtProbe": 11560367,
+    "circleTestUsdc": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+    "usdcCodeSizeBytes": 1799
+  }
+}

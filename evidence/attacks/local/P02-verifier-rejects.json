@@ -1,0 +1,19 @@
+{
+  "id": "P02-verifier-rejects",
+  "kind": "local-foundry-adversarial",
+  "title": "test_VerifierRejectionReverts",
+  "sourceSuite": "contracts/test/CovenantFacilityEvidence.t.sol",
+  "observedResult": "attack-defended",
+  "gasUsed": "5659355",
+  "expectedBehaviour": "ProofVerificationFailed",
+  "invariantDefended": "verified==false path reverts without state change",
+  "layer": "proof-verification",
+  "environment": {
+    "evm": "local (foundry)",
+    "verifier": "MockNativeQueryVerifier etched at 0x...0FD2",
+    "chainInfo": "MockChainInfo etched at 0x...0FD3",
+    "fixtures": "contracts/test/fixtures/fixtures.json (official @gluwa/usc-sdk encoder output)",
+    "note": "DETERMINISTIC TEST EVIDENCE — this is NOT live-chain activity."
+  },
+  "capturedAtUTC": "2026-08-25T00:12:22.719Z"
+}

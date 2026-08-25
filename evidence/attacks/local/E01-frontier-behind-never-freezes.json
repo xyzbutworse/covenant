@@ -1,0 +1,19 @@
+{
+  "id": "E01-frontier-behind-never-freezes",
+  "kind": "local-foundry-adversarial",
+  "title": "test_WindowClosedButFrontierBehind_NeverFreezes",
+  "sourceSuite": "contracts/test/CovenantExpiryLifecycle.t.sol",
+  "observedResult": "attack-defended",
+  "gasUsed": "2803486",
+  "expectedBehaviour": "FrontierNotAdvanced(required, latest)",
+  "invariantDefended": "Borrower never punished while Attestcoin lags",
+  "layer": "expiry",
+  "environment": {
+    "evm": "local (foundry)",
+    "verifier": "MockNativeQueryVerifier etched at 0x...0FD2",
+    "chainInfo": "MockChainInfo etched at 0x...0FD3",
+    "fixtures": "contracts/test/fixtures/fixtures.json (official @gluwa/usc-sdk encoder output)",
+    "note": "DETERMINISTIC TEST EVIDENCE — this is NOT live-chain activity."
+  },
+  "capturedAtUTC": "2026-08-25T00:12:22.721Z"
+}

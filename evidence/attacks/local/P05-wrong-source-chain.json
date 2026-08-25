@@ -1,0 +1,19 @@
+{
+  "id": "P05-wrong-source-chain",
+  "kind": "local-foundry-adversarial",
+  "title": "test_WrongSourceChainReverts",
+  "sourceSuite": "contracts/test/CovenantFacilityEvidence.t.sol",
+  "observedResult": "attack-defended",
+  "gasUsed": "5638690",
+  "expectedBehaviour": "WrongSourceChain",
+  "invariantDefended": "chainKey bound to accepted covenant policy",
+  "layer": "policy",
+  "environment": {
+    "evm": "local (foundry)",
+    "verifier": "MockNativeQueryVerifier etched at 0x...0FD2",
+    "chainInfo": "MockChainInfo etched at 0x...0FD3",
+    "fixtures": "contracts/test/fixtures/fixtures.json (official @gluwa/usc-sdk encoder output)",
+    "note": "DETERMINISTIC TEST EVIDENCE — this is NOT live-chain activity."
+  },
+  "capturedAtUTC": "2026-08-25T00:12:22.720Z"
+}

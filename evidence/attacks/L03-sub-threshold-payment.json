@@ -1,0 +1,20 @@
+{
+  "id": "L03-sub-threshold-payment",
+  "kind": "live-chain",
+  "title": "Below-threshold payment leaves covenant unsatisfied",
+  "invariantDefended": "Accumulation gate: unlock only at full requirement",
+  "recordedAtUTC": "2026-08-25T00:10:27.453Z",
+  "network": "Creditcoin CC3 Testnet (102031) / Ethereum Sepolia (11155111)",
+  "contract": null,
+  "facilityId": "0",
+  "covenantId": "0",
+  "inputTransaction": null,
+  "proofOrCallIdentifier": null,
+  "rejectionTxHash": null,
+  "revertedOnChain": null,
+  "revertReason": null,
+  "outcome": "skipped",
+  "stateBefore": null,
+  "stateAfter": null,
+  "notes": "Needs completed happy path (real Sepolia USDC payment, Attestcoin proof, consumed submission) plus funded attack wallets."
+}

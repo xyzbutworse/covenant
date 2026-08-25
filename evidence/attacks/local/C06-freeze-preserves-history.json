@@ -1,0 +1,19 @@
+{
+  "id": "C06-freeze-preserves-history",
+  "kind": "local-foundry-adversarial",
+  "title": "test_FreezeBlocksFutureDrawsButPreservesHistory",
+  "sourceSuite": "contracts/test/CovenantFacilityAdversarial.t.sol",
+  "observedResult": "attack-defended",
+  "gasUsed": "429882",
+  "expectedBehaviour": "FacilityNotActive on draw",
+  "invariantDefended": "Freeze changes no historical field",
+  "layer": "capital",
+  "environment": {
+    "evm": "local (foundry)",
+    "verifier": "MockNativeQueryVerifier etched at 0x...0FD2",
+    "chainInfo": "MockChainInfo etched at 0x...0FD3",
+    "fixtures": "contracts/test/fixtures/fixtures.json (official @gluwa/usc-sdk encoder output)",
+    "note": "DETERMINISTIC TEST EVIDENCE — this is NOT live-chain activity."
+  },
+  "capturedAtUTC": "2026-08-25T00:12:22.722Z"
+}

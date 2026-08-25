@@ -1,0 +1,19 @@
+{
+  "id": "P06-wrong-emitter",
+  "kind": "local-foundry-adversarial",
+  "title": "test_WrongEmitterReverts",
+  "sourceSuite": "contracts/test/CovenantFacilityEvidence.t.sol",
+  "observedResult": "attack-defended",
+  "gasUsed": "5696874",
+  "expectedBehaviour": "NoMatchingPayment",
+  "invariantDefended": "Emitter must equal approved token contract",
+  "layer": "policy",
+  "environment": {
+    "evm": "local (foundry)",
+    "verifier": "MockNativeQueryVerifier etched at 0x...0FD2",
+    "chainInfo": "MockChainInfo etched at 0x...0FD3",
+    "fixtures": "contracts/test/fixtures/fixtures.json (official @gluwa/usc-sdk encoder output)",
+    "note": "DETERMINISTIC TEST EVIDENCE — this is NOT live-chain activity."
+  },
+  "capturedAtUTC": "2026-08-25T00:12:22.720Z"
+}

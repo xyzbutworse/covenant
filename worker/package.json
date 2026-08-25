@@ -1,0 +1,27 @@
+{
+  "name": "@covenant/worker",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "discover": "tsx src/discover.ts",
+    "prove": "tsx src/prove.ts",
+    "submit": "tsx src/submit.ts",
+    "inspect": "tsx src/inspect.ts",
+    "watch": "tsx src/watch.ts",
+    "typecheck": "tsc --noEmit",
+    "pay": "tsx src/source-pay.ts",
+    "setup": "tsx src/setup-demo.ts",
+    "attacks": "tsx src/attacks.ts"
+  },
+  "dependencies": {
+    "@gluwa/usc-sdk": "0.18.0",
+    "dotenv": "17.4.2",
+    "ethers": "6.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.0",
+    "tsx": "4.23.12",
+    "typescript": "6.0.2"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "L11-unauthorized-draw",
+  "kind": "live-chain",
+  "title": "Draw by non-borrower",
+  "invariantDefended": "Only facility.borrower draws; drawn <= unlocked always",
+  "recordedAtUTC": "2026-08-25T00:10:27.452Z",
+  "network": "Creditcoin CC3 Testnet (102031) / Ethereum Sepolia (11155111)",
+  "contract": null,
+  "facilityId": "0",
+  "covenantId": "0",
+  "inputTransaction": null,
+  "proofOrCallIdentifier": null,
+  "rejectionTxHash": null,
+  "revertedOnChain": null,
+  "revertReason": null,
+  "outcome": "skipped",
+  "stateBefore": null,
+  "stateAfter": null,
+  "notes": "Requires deployed contract + accepted covenant. No funded key in this environment yet."
+}

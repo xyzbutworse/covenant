@@ -1,0 +1,20 @@
+{
+  "id": "L10a-cancel-after-acceptance",
+  "kind": "live-chain",
+  "title": "Cancel an already-accepted covenant",
+  "invariantDefended": "Accepted terms immutable; cancel valid only pre-acceptance",
+  "recordedAtUTC": "2026-08-25T00:10:27.451Z",
+  "network": "Creditcoin CC3 Testnet (102031) / Ethereum Sepolia (11155111)",
+  "contract": null,
+  "facilityId": "0",
+  "covenantId": "0",
+  "inputTransaction": null,
+  "proofOrCallIdentifier": null,
+  "rejectionTxHash": null,
+  "revertedOnChain": null,
+  "revertReason": null,
+  "outcome": "skipped",
+  "stateBefore": null,
+  "stateAfter": null,
+  "notes": "Requires deployed contract + accepted covenant. No funded key in this environment yet."
+}

@@ -1,0 +1,36 @@
+{
+  "name": "covenant",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Proof-conditioned credit lines powered by Creditcoin Attestcoin",
+  "workspaces": [
+    "contracts",
+    "worker",
+    "web"
+  ],
+  "scripts": {
+    "web": "npm --workspace web run dev",
+    "web:build": "npm --workspace web run build",
+    "worker:discover": "npm --workspace worker run discover",
+    "worker:prove": "npm --workspace worker run prove",
+    "worker:submit": "npm --workspace worker run submit",
+    "worker:inspect": "npm --workspace worker run inspect",
+    "worker:watch": "npm --workspace worker run watch",
+    "worker:typecheck": "npm --workspace worker run typecheck",
+    "contracts:build": "cd contracts && forge build",
+    "contracts:test": "cd contracts && forge test -vvv",
+    "web:typecheck": "npm --workspace web run typecheck",
+    "web:lint": "npm --workspace web run lint",
+    "typecheck": "npm run worker:typecheck && npm run web:typecheck",
+    "lint": "npm run web:lint",
+    "check": "npm run typecheck && npm run lint && npm run contracts:test && npm run web:build",
+    "worker:pay": "npm --workspace worker run pay",
+    "worker:setup": "npm --workspace worker run setup",
+    "preflight": "./scripts/preflight.sh",
+    "worker:attacks": "npm --workspace worker run attacks",
+    "export:local-adversarial": "node scripts/export-local-adversarial.cjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

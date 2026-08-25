@@ -1,0 +1,19 @@
+{
+  "id": "E06-deterministic-freezable",
+  "kind": "local-foundry-adversarial",
+  "title": "test_FrontierAdvancesWithoutProof_BecomesDeterministicallyFreezable",
+  "sourceSuite": "contracts/test/CovenantExpiryLifecycle.t.sol",
+  "observedResult": "attack-defended",
+  "gasUsed": "2797043",
+  "expectedBehaviour": "(freeze succeeds)",
+  "invariantDefended": "FREEZABLE is deterministic once both gates pass; permissionless",
+  "layer": "expiry",
+  "environment": {
+    "evm": "local (foundry)",
+    "verifier": "MockNativeQueryVerifier etched at 0x...0FD2",
+    "chainInfo": "MockChainInfo etched at 0x...0FD3",
+    "fixtures": "contracts/test/fixtures/fixtures.json (official @gluwa/usc-sdk encoder output)",
+    "note": "DETERMINISTIC TEST EVIDENCE — this is NOT live-chain activity."
+  },
+  "capturedAtUTC": "2026-08-25T00:12:22.721Z"
+}

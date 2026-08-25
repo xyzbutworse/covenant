@@ -1,0 +1,25 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: v1.2.3
+      - name: Install forge-std
+        working-directory: contracts
+        run: forge install foundry-rs/forge-std@v1.9.7 --no-commit
+      - run: npm run typecheck
+      - run: npm run contracts:build
+      - run: npm run contracts:test
+      - run: npm run web:build

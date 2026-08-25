@@ -1,0 +1,19 @@
+{
+  "id": "G01-balance-equals-escrow",
+  "kind": "local-foundry-adversarial",
+  "title": "invariant_BalanceEqualsUndrawnEscrow",
+  "sourceSuite": "contracts/test/CovenantFacilityInvariants.t.sol",
+  "observedResult": "attack-defended",
+  "gasUsed": "runs=40 calls=2560 reverts=1234",
+  "expectedBehaviour": "holds over fuzzed sequences",
+  "invariantDefended": "balance == sum(creditLimit - drawn) over open facilities",
+  "layer": "global-invariant",
+  "environment": {
+    "evm": "local (foundry)",
+    "verifier": "MockNativeQueryVerifier etched at 0x...0FD2",
+    "chainInfo": "MockChainInfo etched at 0x...0FD3",
+    "fixtures": "contracts/test/fixtures/fixtures.json (official @gluwa/usc-sdk encoder output)",
+    "note": "DETERMINISTIC TEST EVIDENCE — this is NOT live-chain activity."
+  },
+  "capturedAtUTC": "2026-08-25T00:12:22.722Z"
+}

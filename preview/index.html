@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>COVENANT — proof-conditioned credit</title>
+<style>
+  :root{--bg:#050505;--panel:#0c0c0e;--line:rgba(255,255,255,.085);--muted:#696971;--violet:#704cff;--violet2:#9b86ff;--good:#85f1be;--bad:#ff6570;--mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;--sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  *{box-sizing:border-box} html,body{margin:0;width:100%;height:100%;background:var(--bg);color:#f5f5f7;font-family:var(--sans);overflow:hidden}
+  body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 50% 44%,rgba(112,76,255,.075),transparent 25%),linear-gradient(180deg,rgba(255,255,255,.01),transparent 35%);pointer-events:none}
+  .field{position:fixed;inset:-30px;opacity:.13;color:#d0d0d4;font:600 14px/1.1 var(--mono);letter-spacing:.03em;overflow:hidden;user-select:none;filter:blur(.05px)}
+  .row{white-space:nowrap;margin:12px 0;transform:translateX(var(--x));}
+  .row:nth-child(even){opacity:.55}.row:nth-child(3n){opacity:.35}
+  .shell{position:relative;z-index:2;width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:48px 24px 102px}
+  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:900px;margin-top:-8px}
+  .kicker{font:800 10px var(--mono);letter-spacing:.17em;color:#777780;margin-bottom:16px}
+  .brand{display:flex;align-items:center;gap:14px;font-weight:950;font-style:italic;font-size:46px;letter-spacing:-.055em;color:#fff}
+  .mark{width:52px;height:52px;filter:drop-shadow(0 0 20px rgba(112,76,255,.2))}.mark path{fill:var(--violet)}
+  h1{font-size:45px;line-height:.98;letter-spacing:-.055em;margin:25px 0 12px;font-weight:950}
+  p{color:#8c8c94;font-size:14px;line-height:1.55;max-width:675px;margin:0}
+  .flow{display:flex;align-items:center;gap:7px;margin-top:22px;font:800 9px var(--mono);letter-spacing:.1em;color:#777780}.flow span{padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:rgba(13,13,15,.92);color:#bebec4}.flow b{color:var(--violet2)}
+  .actions{display:flex;gap:9px;margin-top:18px}.btn{height:42px;min-width:132px;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;padding:0 18px;font:800 10px var(--mono);letter-spacing:.03em;background:#121214;color:#ededf0}.btn.primary{background:var(--violet);border-color:transparent;color:#fff;box-shadow:0 10px 30px rgba(112,76,255,.12)}
+  .built{margin-top:19px;font:700 9px var(--mono);letter-spacing:.12em;color:#4e4e55}.built strong{color:#d8d8dc}
+  .nav{position:fixed;z-index:5;left:50%;bottom:28px;transform:translateX(-50%);display:grid;grid-template-columns:repeat(4,1fr);width:518px;height:54px;padding:5px;background:rgba(15,15,17,.97);border:1px solid rgba(255,255,255,.07);border-radius:15px;box-shadow:0 18px 60px rgba(0,0,0,.45)}
+  .nav div{display:flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;color:#83838b;font:800 9px var(--mono)}.nav .active{background:#1b1b1e;color:#fff}.nav i{font-style:normal;color:var(--violet2);font-size:13px}
+  .badge{position:fixed;z-index:4;top:24px;right:26px;border:1px solid var(--line);background:rgba(10,10,11,.86);padding:9px 11px;border-radius:9px;color:#777780;font:700 8px var(--mono);letter-spacing:.1em}.badge b{color:var(--good)}
+  .micro{position:fixed;z-index:4;left:26px;top:27px;color:#4d4d53;font:750 8px var(--mono);letter-spacing:.14em}
+  @media(max-width:700px){h1{font-size:35px}.brand{font-size:37px}.nav{width:calc(100vw - 24px)}.flow{flex-wrap:wrap;justify-content:center}.badge{display:none}}
+</style>
+</head>
+<body>
+<div class="field" aria-hidden="true">
+  <div class="row" style="--x:-60px">USDC 5.00  SEP  ETH  0x1C7D  BLOCK 9128401  CTC 100.0  PROOF 0x0FD2  TRANSFER VERIFIED  MERKLE ROOT 8F2A  CONTINUITY 19  COVENANT 01  TRANCHE 20</div>
+  <div class="row" style="--x:-130px">FACILITY 001  LENDER 0xA11C  BORROWER 0xB0B0  LIMIT 100 CTC  DRAWN 20  UNLOCKED 20  OBLIGATION 5 USDC  SEPOLIA  PAY  PROVE  UNLOCK</div>
+  <div class="row" style="--x:-10px">CHAINKEY 1  HEIGHT 9128500  QUERY 4D91  TOKEN 0x1C7D4B196CB0C7B01D743FBC6116A902379C7238  RECEIPT STATUS 1  EVENT TRANSFER  AMOUNT 5000000</div>
+  <div class="row" style="--x:-220px">NO PDF  NO MANUAL ETHERSCAN  NO CENTRAL ORACLE  CRYPTOGRAPHIC FACT  CREDIT LINE  REVOLVING  PROOF DEADLINE  IMMUTABLE POLICY  BORROWER ACCEPTED</div>
+  <div class="row" style="--x:-75px">0x0FD2  0x0FD3  MERKLE  CONTINUITY  ROOT  SIBLING  RECEIPT  LOG  PAYER  RECIPIENT  WINDOW  REPLAY REJECTED  PROOF ACCEPTED  COVENANT SATISFIED</div>
+  <div class="row" style="--x:-190px">CTC 20  USDC 5  ETH SEP  BLOCK 9128458  QUERY ID 0x72FA  FACILITY ACTIVE  COVENANT PENDING  NEXT TRANCHE LOCKED  EVIDENCE REQUIRED</div>
+  <div class="row" style="--x:-40px">PAY THERE  PROVE HERE  UNLOCK CAPITAL  CREDITCOIN  ATTESTCOIN  SOURCE CONTRACT  CIRCLE USDC  VERIFIED RECEIPT  EXACT EMITTER  EXACT PAYER</div>
+  <div class="row" style="--x:-265px">100 CTC  20 DRAWN  80 ESCROW  0 AVAILABLE  5.00 USDC REQUIRED  0 VERIFIED  SOURCE WINDOW 9128200—9128500  PROOF DEADLINE 1832001</div>
+  <div class="row" style="--x:-120px">REPLAY  WRONG TOKEN  WRONG RECIPIENT  WRONG PAYER  REVERTED TX  OUTSIDE WINDOW  DUST PAYMENT  PARTIAL ACCUMULATE  DEADLINE FREEZE</div>
+  <div class="row" style="--x:-30px">CAPITAL MOVES WHEN PROOF ARRIVES  COVENANT  COVENANT  COVENANT  FACILITY  TRANCHE  PROOF  POLICY  ATTESTED PERFORMANCE  CREDIT</div>
+  <div class="row" style="--x:-190px">USDC 5.00  SEP  ETH  0x1C7D  BLOCK 9128401  CTC 100.0  PROOF 0x0FD2  TRANSFER VERIFIED  MERKLE ROOT 8F2A  CONTINUITY 19</div>
+  <div class="row" style="--x:-80px">FACILITY 001  LENDER 0xA11C  BORROWER 0xB0B0  LIMIT 100 CTC  DRAWN 20  UNLOCKED 20  OBLIGATION 5 USDC  SEPOLIA  PAY  PROVE  UNLOCK</div>
+  <div class="row" style="--x:-250px">CHAINKEY 1  HEIGHT 9128500  QUERY 4D91  TOKEN 0x1C7D4B196CB0C7B01D743FBC6116A902379C7238  RECEIPT STATUS 1  EVENT TRANSFER  AMOUNT 5000000</div>
+</div>
+<div class="micro">COVENANT / PROTOCOL 0.1</div>
+<div class="badge"><b>●</b> ATTESTCOIN READY</div>
+<main class="shell">
+  <section class="hero">
+    <div class="kicker">CROSS-CHAIN CREDIT / ATTESTED PERFORMANCE</div>
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 64 64"><path d="M13 18L31 7l18 11-8 8-10-6-10 6-8-8Z"/><path d="M13 29l9-6 9 6 9-6 11 7v15L31 57 13 46V29Zm10 8v5l8 5 9-5v-5l-9 6-8-6Z"/></svg>
+      <span>COVENANT</span>
+    </div>
+    <h1>PROVE THE OBLIGATION.<br>KEEP THE CAPITAL MOVING.</h1>
+    <p>A revolving Creditcoin facility whose next tranche unlocks only after Attestcoin verifies the borrower’s agreed external payment.</p>
+    <div class="flow"><span>DRAW</span><b>→</b><span>PAY THERE</span><b>→</b><span>PROVE</span><b>→</b><span>UNLOCK HERE</span></div>
+    <div class="actions"><div class="btn primary">OPEN FACILITY</div><div class="btn">JUDGE PROOF</div></div>
+    <div class="built">BUILT WITH <strong>ATTESTCOIN</strong> · CREDITCOIN</div>
+  </section>
+</main>
+<nav class="nav"><div class="active"><i>▤</i>FACILITY</div><div><i>◇</i>PROOF</div><div><i>×</i>ATTACKS</div><div><i>≡</i>DOCS</div></nav>
+</body>
+</html>

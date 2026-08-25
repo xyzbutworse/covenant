@@ -1,0 +1,18 @@
+{
+  "kind": "local-foundry-adversarial-index",
+  "forgeRun": {
+    "suites": 5,
+    "rawSummaryLines": [
+      "Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 10.04ms (10.48ms CPU time)",
+      "Suite result: ok. 18 passed; 0 failed; 0 skipped; finished in 188.84ms (229.99ms CPU time)",
+      "Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 292.15ms (15.34ms CPU time)",
+      "Suite result: ok. 18 passed; 0 failed; 0 skipped; finished in 292.22ms (209.86ms CPU time)",
+      "Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 292.15ms (1.63s CPU time)"
+    ],
+    "totalsLine": "Ran 5 test suites in 301.27ms (1.08s CPU time): 57 tests passed, 0 failed, 0 skipped (57 total tests)"
+  },
+  "exported": 44,
+  "missingFromRun": [],
+  "disclaimer": "These are deterministic local Foundry attacks against behavior-faithful doubles of the 0x…0FD2/0x…0FD3 precompiles. They are NOT live-chain evidence. Live negative-path records live beside this folder as ../L*.json with kind:\"live-chain\".",
+  "generatedAtUTC": "2026-08-25T00:12:22.723Z"
+}
