@@ -18,7 +18,7 @@ jobs:
           version: v1.2.3
       - name: Install forge-std
         working-directory: contracts
-        run: forge install foundry-rs/forge-std@v1.9.7 --no-commit
+        run: forge install foundry-rs/forge-std@v1.9.7 --no-git
       - run: npm run typecheck
       - run: npm run contracts:build
       - run: npm run contracts:test
